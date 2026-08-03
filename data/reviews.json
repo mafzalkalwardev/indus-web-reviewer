@@ -1,0 +1,111 @@
+[
+  {
+    "call_id": "call-1785754899268",
+    "timestamp": "2026-08-03T11:01:39.268Z",
+    "category_id": "unknown",
+    "selected_option_id": "",
+    "confidence": 0,
+    "reasoning": "page.waitForSelector: Target page, context or browser has been closed",
+    "latency_ms": 16752,
+    "status": "skipped_error"
+  },
+  {
+    "call_id": "call-1785766237748",
+    "timestamp": "2026-08-03T14:10:37.748Z",
+    "category_id": "radio1",
+    "category_name": "Category Instructions: Inbound",
+    "selected_option_id": "",
+    "confidence": 0,
+    "reasoning": "Grok evaluation failed after 3 attempts: Error: 400 \"Model not found: gpt-4o-mini\"",
+    "latency_ms": 65857,
+    "status": "skipped_error"
+  },
+  {
+    "call_id": "call-1785766449409",
+    "timestamp": "2026-08-03T14:14:09.409Z",
+    "category_id": "3",
+    "category_name": "Inbound",
+    "selected_option_id": "radio1_1",
+    "confidence": 0.9,
+    "reasoning": "[PRACTICE] The caller connected with a qualified employee who could assist with their inquiry about a car seen online. The employee, despite being busy, agreed to call back with the necessary information, which aligns with the criteria for a handled call.",
+    "latency_ms": 32657,
+    "status": "practice_selected"
+  },
+  {
+    "call_id": "practice-3-0",
+    "timestamp": "2026-08-03T14:31:07.761Z",
+    "category_id": "3",
+    "category_name": "Inbound practice",
+    "selected_option_id": "radio6_1",
+    "confidence": 0.9,
+    "reasoning": "[PRACTICE Q1] The call was handled by an interactive system that provided options for the caller to reach different departments or leave a message for the receptionist, aligning with the criteria for being handled by a qualified employee or interactive system. | corrected to Not handled: reached voicemail and did not leave message | outcome=correct",
+    "latency_ms": 0,
+    "status": "practice_selected"
+  },
+  {
+    "call_id": "practice-3-1",
+    "timestamp": "2026-08-03T14:31:18.970Z",
+    "category_id": "3",
+    "category_name": "Inbound practice",
+    "selected_option_id": "radio1_2",
+    "confidence": 1,
+    "reasoning": "[PRACTICE Q2] The call was handled by Marie, a qualified employee, who assisted the caller with their inquiry about their appointment time. | outcome=correct",
+    "latency_ms": 0,
+    "status": "practice_selected"
+  },
+  {
+    "call_id": "practice-3-2",
+    "timestamp": "2026-08-03T14:31:34.569Z",
+    "category_id": "3",
+    "category_name": "Inbound practice",
+    "selected_option_id": "radio7_3",
+    "confidence": 0.9,
+    "reasoning": "[PRACTICE Q3] The caller had a live conversation with Caroline, but the issue was not resolved during the call. Caroline took the caller's information to have someone return their call, which means no live message was left for another employee in the classical sense, but it's more accurate to say the call was not handled as the caller's issue remains unresolved. | corrected to Not handled: live message left for another employee | outcome=correct",
+    "latency_ms": 0,
+    "status": "practice_selected"
+  },
+  {
+    "call_id": "practice-3-0",
+    "timestamp": "2026-08-03T14:34:46.486Z",
+    "category_id": "3",
+    "category_name": "Inbound practice",
+    "selected_option_id": "radio6_1",
+    "confidence": 0.8,
+    "reasoning": "[PRACTICE Q1] The call is an automated voicemail message and the caller hasn't had the chance to talk to a live agent or leave a message yet. It's not clear if the caller will leave a message, so it's 'Not handled' but doesn't fit the other 'Not handled' categories perfectly. | corrected to Not handled: reached voicemail and did not leave message | outcome=correct",
+    "latency_ms": 0,
+    "status": "practice_selected"
+  },
+  {
+    "call_id": "practice-3-1",
+    "timestamp": "2026-08-03T14:34:56.933Z",
+    "category_id": "3",
+    "category_name": "Inbound practice",
+    "selected_option_id": "radio1_2",
+    "confidence": 1,
+    "reasoning": "[PRACTICE Q2] The call was handled by Marie, a qualified employee of Coral Vaca Dentistry, who assisted the caller with their appointment schedule inquiry. | outcome=correct",
+    "latency_ms": 0,
+    "status": "practice_selected"
+  },
+  {
+    "call_id": "practice-3-2",
+    "timestamp": "2026-08-03T14:35:13.207Z",
+    "category_id": "3",
+    "category_name": "Inbound practice",
+    "selected_option_id": "radio7_3",
+    "confidence": 0.9,
+    "reasoning": "[PRACTICE Q3] The call is handled by a qualified employee who attempts to assist the caller with their inquiry, even though the issue is not resolved during the call. | corrected to Not handled: live message left for another employee | outcome=correct",
+    "latency_ms": 0,
+    "status": "practice_selected"
+  },
+  {
+    "call_id": "call-1785773432960",
+    "timestamp": "2026-08-03T16:10:32.960Z",
+    "category_id": "takeABreak",
+    "category_name": "takeABreak",
+    "selected_option_id": "humfun_take_a_break_checkbox",
+    "confidence": 0.8,
+    "reasoning": "The category rules specify 'Break After This Call', and although the transcript does not explicitly mention this, the task instructions suggest considering the context and intent of the call. Given the lack of contradictory information, the selected option aligns with the category rules. | SKIP: Low Grok confidence: 0.8",
+    "latency_ms": 4680,
+    "status": "skipped_low_confidence"
+  }
+]

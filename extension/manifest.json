@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Humanatic Call Review Helper",
+  "version": "0.1.0",
+  "description": "Browser extension scaffolding for Humanatic review automation.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://reviewer.humanatic.ai/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://reviewer.humanatic.ai/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Humanatic Call Review Helper"
+  }
+}

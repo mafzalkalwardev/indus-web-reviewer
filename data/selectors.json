@@ -1,0 +1,13 @@
+{
+  "callContainer": "div.module-section > div.wrapper > form > div.humfun-review-section > div.humfun-review-section-right:nth-of-type(2)",
+  "categoryInfoIcon": "div.humfun-review-section > div.humfun-review-section-right:nth-of-type(2) > div.humfun-options-section.module-section > div.humfun-options-header:nth-of-type(1) > div.humfun-options-header-info:nth-of-type(2)",
+  "categoryTitle": ".category-title, .category-name, h2.category-header, h1, h2, h3",
+  "optionInputs": "input[type=\"radio\"], input[type=\"checkbox\"]",
+  "transcriptElement": "form > div.humfun-review-section > div.humfun-review-section-right:nth-of-type(2) > div.humfun-options-section.module-section > div.humfun-options-header:nth-of-type(1)",
+  "audioSource": "audio, [data-audio-source], .audio-player",
+  "submitButton": "#submitButton",
+  "loginForm": "#login-form, form[action*='login'], .login-form",
+  "emailInput": "input[name='email'], input[name='username'], input[type='email'], input[name='login']",
+  "passwordInput": "input[name='password'], input[type='password']",
+  "loginButton": "button[type='submit'], .btn-login, #loginBtn, input[type='submit']"
+}

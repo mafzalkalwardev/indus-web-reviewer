@@ -1,0 +1,11 @@
+{
+  "started_at": "2026-08-03T16:10:28.264Z",
+  "reviews_attempted": 1,
+  "reviews_submitted": 0,
+  "reviews_skipped": 1,
+  "categories_seen": [
+    "takeABreak"
+  ],
+  "stop_reason": "idle_timeout",
+  "finished_at": "2026-08-03T16:12:33.076Z"
+}

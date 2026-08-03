@@ -1,0 +1,43 @@
+{
+  "name": "indus-web-reviewer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Indus Web Reviewer — Humanatic call review automation with local control dashboard.",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "prepare-auth": "node dist/index.js --save-auth",
+    "analyze-dom": "ts-node scripts/analyze-dom.ts",
+    "map-portal": "ts-node scripts/map-portal.ts",
+    "scrape-categories": "ts-node scripts/scrape-category-info.ts",
+    "seed-categories": "ts-node scripts/seed-categories.ts",
+    "practice-inbound": "ts-node scripts/practice-inbound.ts",
+    "practice": "ts-node scripts/practice-continue.ts",
+    "long-haul": "ts-node scripts/long-haul.ts",
+    "api": "ts-node server/index.ts",
+    "worker:wait": "ts-node src/waitWorker.ts",
+    "web": "npm --prefix web run dev",
+    "web:install": "npm --prefix web install",
+    "dashboard": "concurrently -k -n api,web -c teal,magenta \"npm run api\" \"npm run web\"",
+    "codegraph:init": "codegraph init",
+    "codegraph:index": "codegraph index",
+    "codegraph:status": "codegraph status",
+    "lint": "eslint . --ext .ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.21.0",
+    "openai": "^4.9.0",
+    "playwright": "^1.42.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.0",
+    "concurrently": "^9.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^6.0.3"
+  }
+}

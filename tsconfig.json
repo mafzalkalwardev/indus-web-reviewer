@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "lib": ["ES2020", "DOM"],
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "allowJs": false,
+    "noImplicitAny": true
+  },
+  "include": ["src/**/*", "server/**/*", "extension/**/*"]
+}
