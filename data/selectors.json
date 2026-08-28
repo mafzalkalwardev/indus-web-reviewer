@@ -9,5 +9,5 @@
   "loginForm": "#login-form, form[action*='login'], .login-form",
   "emailInput": "input[name='email'], input[name='username'], input[type='email'], input[name='login']",
   "passwordInput": "input[name='password'], input[type='password']",
-  "loginButton": "button[type='submit'], .btn-login, #loginBtn, input[type='submit']"
+  "loginButton": "button[type='submit'], input[type='submit'], .btn-login, #loginBtn"
 }

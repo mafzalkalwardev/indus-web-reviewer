@@ -1,0 +1,247 @@
+{
+  "scrapedAt": "2026-08-04T18:28:10.811Z",
+  "pages": [
+    {
+      "kind": "profile",
+      "title": "Profile - Humanatic",
+      "url": "https://www.humanatic.com/pages/humfun/profile.cfm",
+      "text": "Profile ? Manuel Hick Review Calls Earnings Audits Accuracy Announcements Leaderboard FAQ Account Settings",
+      "tables": [],
+      "auditishLinks": [
+        {
+          "text": "Audits",
+          "href": "https://www.humanatic.com/pages/humfun/selection_all.cfm"
+        },
+        {
+          "text": "Accuracy",
+          "href": "https://www.humanatic.com/pages/humfun/accuracy.cfm"
+        }
+      ]
+    },
+    {
+      "kind": "candidate",
+      "url": "https://www.humanatic.com/pages/humfun/selection_all.cfm",
+      "title": "Audited Calls - Humanatic",
+      "textPreview": "Audited Calls Please take some time to review your audited calls. Penalized reviews will be displayed in red. Penalties can be disputed. Disputes must be submitted within 5 days of the date the review occurred in order to be mediated. If the review occurred more than 5 days ago, your dispute will be considered too old and no longer eligible for mediation. Manuel Hick Date Time Earnings Category Selection Notes 2026-08-04 11:20A cst -2.6¢ Inbound Handled by a qualified employee or interactive system Call is still being reviewed by other reviewers and is not eligible for Dispute yet. 2026-08-03 4:54P cst -2.6¢ Inbound Handled by a qualified employee or interactive system Call may be disputed. 2026-08-03 3:59P cst -2.6¢ Inbound Handled by a qualified employee or interactive system Call may be disputed. 2026-08-04 1:25P cst 1.3¢ Inbound Handled by a qualified employee or interactive system Call is still being reviewed by other reviewers and is not eligible for Dispute yet. 2026-08-04 1:07P cst 1.3¢ Inbound Handled by a qualified employee or interactive system Call is still being reviewed by other reviewers and is not eligible for Dispute yet. 2026-08-04 12:47P cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet. 2026-08-04 12:42P cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers an",
+      "rowCount": 42,
+      "incorrectCount": 13
+    },
+    {
+      "kind": "candidate",
+      "url": "https://www.humanatic.com/pages/humfun/accuracy.cfm",
+      "title": "Category Accuracy - Humanatic",
+      "textPreview": "Category Accuracy Accuracy scores are not a reflection of every review you have completed. Our system calculates accuracy by sampling a fraction of your reviews from the past 14 days. These reviews are selected at random and audited for accuracy. The accuracy scores shown below are based on those audits. Visit our FAQ for more information about how accuracy is calculated Categories Accuracy Inbound 0% Live conversation - outbound 0% Dealership Discussion 0% Rent Buzz: Why Calling 0% Department 0% Home Services: Live Conversation 0%",
+      "rowCount": 0,
+      "incorrectCount": 0
+    },
+    {
+      "kind": "candidate",
+      "url": "https://www.humanatic.com/pages/humfun/audits.cfm",
+      "title": "",
+      "textPreview": "An unexpected error occurred. Error ID: DCDB51F7-D1C0-4A8B-B1CEA77BB1ED4821 The support team has been notified. Please try your request again shortly.",
+      "rowCount": 0,
+      "incorrectCount": 0
+    },
+    {
+      "kind": "candidate",
+      "url": "https://www.humanatic.com/pages/humfun/audit.cfm",
+      "title": "",
+      "textPreview": "An unexpected error occurred. Error ID: EDAE1C9B-AC55-4242-8147613EFFD37742 The support team has been notified. Please try your request again shortly.",
+      "rowCount": 0,
+      "incorrectCount": 0
+    },
+    {
+      "kind": "candidate",
+      "url": "https://www.humanatic.com/pages/humfun/myaudits.cfm",
+      "title": "",
+      "textPreview": "An unexpected error occurred. Error ID: 7AE322FA-CD83-4E63-9AC3F68419ACE206 The support team has been notified. Please try your request again shortly.",
+      "rowCount": 0,
+      "incorrectCount": 0
+    },
+    {
+      "kind": "candidate",
+      "url": "https://www.humanatic.com/pages/humfun/disputes.cfm",
+      "title": "",
+      "textPreview": "An unexpected error occurred. Error ID: A2A589D3-D874-435F-8BA745FB93A950C7 The support team has been notified. Please try your request again shortly.",
+      "rowCount": 0,
+      "incorrectCount": 0
+    },
+    {
+      "kind": "candidate",
+      "url": "https://www.humanatic.com/pages/humfun/review_history.cfm",
+      "title": "",
+      "textPreview": "An unexpected error occurred. Error ID: 904FA2F2-7B2A-4109-96656E303D18663F The support team has been notified. Please try your request again shortly.",
+      "rowCount": 0,
+      "incorrectCount": 0
+    },
+    {
+      "kind": "candidate",
+      "url": "https://www.humanatic.com/pages/humfun/scores.cfm",
+      "title": "",
+      "textPreview": "An unexpected error occurred. Error ID: AAB89E1A-4949-433E-8A0451CF2F89CD0B The support team has been notified. Please try your request again shortly.",
+      "rowCount": 0,
+      "incorrectCount": 0
+    }
+  ],
+  "incorrect": [
+    {
+      "text": "2026-08-04 12:47P cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "",
+      "status": "incorrect",
+      "category": "Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "when": "",
+      "canDispute": true
+    },
+    {
+      "text": "2026-08-04 12:42P cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "",
+      "status": "incorrect",
+      "category": "Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "when": "",
+      "canDispute": true
+    },
+    {
+      "text": "2026-08-04 11:31A cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "",
+      "status": "incorrect",
+      "category": "Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "when": "",
+      "canDispute": true
+    },
+    {
+      "text": "2026-08-04 10:39A cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "",
+      "status": "incorrect",
+      "category": "Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "when": "",
+      "canDispute": true
+    },
+    {
+      "text": "2026-08-04 10:37A cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "",
+      "status": "incorrect",
+      "category": "Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "when": "",
+      "canDispute": true
+    },
+    {
+      "text": "2026-08-04 10:33A cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "",
+      "status": "incorrect",
+      "category": "Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "when": "",
+      "canDispute": true
+    },
+    {
+      "text": "2026-08-04 9:47A cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "",
+      "status": "incorrect",
+      "category": "Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "when": "",
+      "canDispute": true
+    },
+    {
+      "text": "2026-08-04 8:49A cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "",
+      "status": "incorrect",
+      "category": "Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "when": "",
+      "canDispute": true
+    },
+    {
+      "text": "2026-08-03 5:55P cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam",
+      "href": "",
+      "status": "incorrect",
+      "category": "Inbound Not handled: nobody there, hung up during bridge, wrong number, spam",
+      "when": "",
+      "canDispute": false
+    },
+    {
+      "text": "2026-08-03 5:50P cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam",
+      "href": "",
+      "status": "incorrect",
+      "category": "Inbound Not handled: nobody there, hung up during bridge, wrong number, spam",
+      "when": "",
+      "canDispute": false
+    },
+    {
+      "text": "2026-08-03 4:45P cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam",
+      "href": "",
+      "status": "incorrect",
+      "category": "Inbound Not handled: nobody there, hung up during bridge, wrong number, spam",
+      "when": "",
+      "canDispute": false
+    },
+    {
+      "text": "2026-08-03 3:58P cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam",
+      "href": "",
+      "status": "incorrect",
+      "category": "Inbound Not handled: nobody there, hung up during bridge, wrong number, spam",
+      "when": "",
+      "canDispute": false
+    },
+    {
+      "text": "2026-08-03 3:13P cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam",
+      "href": "",
+      "status": "incorrect",
+      "category": "Inbound Not handled: nobody there, hung up during bridge, wrong number, spam",
+      "when": "",
+      "canDispute": false
+    }
+  ],
+  "disputes": [
+    {
+      "row": "2026-08-04 12:47P cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "https://www.humanatic.com/pages/humfun/scores.cfm",
+      "ok": false,
+      "detail": "No Dispute control visible"
+    },
+    {
+      "row": "2026-08-04 12:42P cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "https://www.humanatic.com/pages/humfun/scores.cfm",
+      "ok": false,
+      "detail": "No Dispute control visible"
+    },
+    {
+      "row": "2026-08-04 11:31A cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "https://www.humanatic.com/pages/humfun/scores.cfm",
+      "ok": false,
+      "detail": "No Dispute control visible"
+    },
+    {
+      "row": "2026-08-04 10:39A cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "https://www.humanatic.com/pages/humfun/scores.cfm",
+      "ok": false,
+      "detail": "No Dispute control visible"
+    },
+    {
+      "row": "2026-08-04 10:37A cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "https://www.humanatic.com/pages/humfun/scores.cfm",
+      "ok": false,
+      "detail": "No Dispute control visible"
+    },
+    {
+      "row": "2026-08-04 10:33A cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "https://www.humanatic.com/pages/humfun/scores.cfm",
+      "ok": false,
+      "detail": "No Dispute control visible"
+    },
+    {
+      "row": "2026-08-04 9:47A cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "https://www.humanatic.com/pages/humfun/scores.cfm",
+      "ok": false,
+      "detail": "No Dispute control visible"
+    },
+    {
+      "row": "2026-08-04 8:49A cst 1.3¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "href": "https://www.humanatic.com/pages/humfun/scores.cfm",
+      "ok": false,
+      "detail": "No Dispute control visible"
+    }
+  ],
+  "profileStats": {
+    "accuracySnippet": "Accuracy Announcements Leaderboard FAQ Account Settings",
+    "dollarsSeen": [],
+    "title": "Profile - Humanatic"
+  }
+}

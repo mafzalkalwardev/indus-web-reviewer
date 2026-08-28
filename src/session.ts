@@ -1,7 +1,7 @@
 import { Page } from "playwright";
 import { config } from "./config";
 import { DEFAULT_SELECTORS } from "./humanatic";
-import { FACE_VERIFY_URL_HINT, categoryQueueUrl, HUMANATIC_CATEGORIES } from "./categories";
+import { FACE_VERIFY_URL_HINT, HUMANATIC_CATEGORIES } from "./categories";
 
 const LOGIN_URL_HINTS = ["login.cfm", "/login", "humfun/login"];
 
@@ -222,7 +222,10 @@ export const loginWithCredentials = async (page: Page): Promise<boolean> => {
   await passwordInput.click({ clickCount: 3 });
   await passwordInput.fill(password);
 
-  const loginBtn = await page.$(btnSel);
+  const loginBtn =
+    (await page.$(btnSel)) ||
+    (await page.locator("button, input[type='submit'], a").filter({ hasText: /log\s*in/i }).first().elementHandle().catch(() => null));
+
   if (loginBtn) {
     console.log("[session] Auto-login: submitting form...");
     await Promise.all([
@@ -261,16 +264,159 @@ export const loginWithCredentials = async (page: Page): Promise<boolean> => {
 };
 
 /**
- * Open a category review queue (same URL Tampermonkey uses from noCalls).
+ * Open a category review queue via Category List → REVIEW link click.
+ * Raw x19 deep-links often force logout / noCalls bounce on this account.
  */
-export const openCategoryQueue = async (page: Page, categoryId: number): Promise<void> => {
-  const url = categoryQueueUrl(categoryId);
+export const openCategoryViaReviewClick = async (
+  page: Page,
+  categoryId: number,
+): Promise<"ready" | "empty" | "practice" | "login" | "missing"> => {
+  const { CATEGORY_LIST_URL } = await import("./categories");
   const cat = HUMANATIC_CATEGORIES.find((c) => c.id === categoryId);
-  console.log(`[session] Opening category queue ${cat?.name || categoryId}: ${url}`);
-  await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
-  await page.waitForTimeout(2000);
+  console.log(
+    `[session] Opening ${cat?.name || categoryId} via Category List REVIEW click (not x19 deep-link)`,
+  );
+
+  // Already on a call screen — do not leave it
+  const here = page.url().toLowerCase();
+  if (here.includes("hcat_intro") || /category_selector\.cfm/i.test(here)) {
+    console.log(`[session] Already on call path (${page.url()}) — not reopening list`);
+    const practice = await page.locator(".practice-review").count().catch(() => 0);
+    if (practice >= 1) return "practice";
+    return "ready";
+  }
+
+  try {
+    await page.goto(CATEGORY_LIST_URL, { waitUntil: "domcontentloaded", timeout: 60000 });
+  } catch (e) {
+    const msg = (e as Error).message || "";
+    if (/destroyed|Navigation|ERR_ABORTED/i.test(msg)) {
+      await page.waitForTimeout(2000);
+    } else {
+      throw e;
+    }
+  }
+  await page.waitForTimeout(2000 + Math.floor(Math.random() * 1500));
+
+  if (page.url().toLowerCase().includes("login.cfm")) return "login";
+
   const { ensureClearOfBreakRoom } = await import("./breakRoom");
   await ensureClearOfBreakRoom(page);
+
+  // Wait for list DOM (Humanatic sometimes paints rows late)
+  await page
+    .waitForSelector(
+      '.category-row, a[href*="category_selector"], a[href*="hcat_intro"], a[href*="hcat="]',
+      { timeout: 15000 },
+    )
+    .catch(() => undefined);
+  await page.waitForTimeout(2500 + Math.floor(Math.random() * 2500));
+
+  let clickResult: { ok: boolean; log: string[] } = { ok: false, log: [] };
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      clickResult = await page.evaluate((payload) => {
+        const { id, name } = payload;
+        const log: string[] = [];
+        const allLinks = Array.from(
+          document.querySelectorAll(
+            'a[href*="category_selector"], a[href*="hcat_intro"], a[href*="hcat="], a[href*="x19"]',
+          ),
+        ) as HTMLAnchorElement[];
+        log.push(
+          ...allLinks.slice(0, 16).map((a) => `${(a.textContent || "").trim().slice(0, 40)}|${a.href}`),
+        );
+
+        const matchesId = (href: string) =>
+          new RegExp(`[?&](?:category|hcat)=${id}(?:&|$)`, "i").test(href);
+
+        const tryClick = (a: HTMLAnchorElement | null | undefined) => {
+          if (!a) return false;
+          a.scrollIntoView({ block: "center" });
+          a.click();
+          return true;
+        };
+
+        const byHref = allLinks.find((a) => matchesId(a.href));
+        if (tryClick(byHref)) return { ok: true, log };
+
+        // Prefer an anchor whose text looks like REVIEW near this category id
+        const reviewLike = allLinks.find(
+          (a) => matchesId(a.href) || (/review/i.test(a.textContent || "") && matchesId(a.href)),
+        );
+        if (tryClick(reviewLike)) return { ok: true, log };
+
+        if (name) {
+          const needle = name.toLowerCase().slice(0, 16);
+          const rows = Array.from(
+            document.querySelectorAll(".category-row, tr, li, div"),
+          );
+          for (const row of rows) {
+            const text = (row.textContent || "").toLowerCase();
+            if (!text.includes(needle)) continue;
+            const a =
+              (row.querySelector(
+                'a[href*="category_selector"], a[href*="hcat_intro"], a[href*="hcat="]',
+              ) as HTMLAnchorElement | null) ||
+              (Array.from(row.querySelectorAll("a")).find((x) =>
+                /review/i.test(x.textContent || ""),
+              ) as HTMLAnchorElement | undefined) ||
+              null;
+            if (tryClick(a)) return { ok: true, log };
+          }
+        }
+
+        return { ok: false, log };
+      }, { id: categoryId, name: cat?.name || "" });
+      break;
+    } catch (e) {
+      const msg = (e as Error).message || "";
+      if (/Execution context was destroyed|navigation/i.test(msg)) {
+        console.warn(`[session] evaluate interrupted by navigation — retry ${attempt + 1}`);
+        await page.waitForTimeout(2000);
+        // If navigation already took us to a call/empty page, classify it
+        const u = page.url().toLowerCase();
+        if (u.includes("login.cfm") || u.includes("logout.cfm")) return "login";
+        if (u.includes("nocalls.cfm")) return "empty";
+        if (u.includes("hcat_intro") || u.includes("category_selector")) return "ready";
+        continue;
+      }
+      throw e;
+    }
+  }
+
+  if (!clickResult.ok) {
+    console.warn(`[session] No REVIEW link for category ${categoryId} on list`);
+    console.warn(`[session] Visible queue links: ${clickResult.log.join(" || ") || "(none)"}`);
+    console.warn(`[session] URL while missing: ${page.url()}`);
+    return "missing";
+  }
+
+  await Promise.race([
+    page.waitForURL(/nocalls|hcat_intro|category_selector|break_room|login|logout/i, {
+      timeout: 20000,
+    }),
+    page.waitForTimeout(8000),
+  ]).catch(() => undefined);
+  await page.waitForTimeout(1500);
+
+  const url = page.url().toLowerCase();
+  console.log(`[session] After REVIEW click → ${page.url()}`);
+  if (url.includes("login.cfm") || url.includes("logout.cfm")) return "login";
+  if (url.includes("nocalls.cfm")) return "empty";
+  if (url.includes("hcat_intro") || url.includes("category_selector")) {
+    const practice = await page.locator(".practice-review").count().catch(() => 0);
+    if (practice >= 1) return "practice";
+    return "ready";
+  }
+  return "ready";
+};
+
+/**
+ * @deprecated Prefer openCategoryViaReviewClick — deep links often kill the session.
+ */
+export const openCategoryQueue = async (page: Page, categoryId: number): Promise<void> => {
+  await openCategoryViaReviewClick(page, categoryId);
 };
 
 /**

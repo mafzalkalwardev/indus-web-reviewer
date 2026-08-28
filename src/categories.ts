@@ -19,6 +19,16 @@ export const HUMANATIC_CATEGORIES: HumanaticCategory[] = [
   { id: 20, key: "dealership_discussion", name: "Dealership Discussion" },
 ];
 
+/** Last-known list payouts (¢) — refreshed live from Category List scrape. */
+export const KNOWN_PAYOUT_CENTS: Record<number, number> = {
+  3: 1.3,
+  4: 0.5,
+  87: 1.7,
+  223: 1.9,
+  78: 2.6,
+  20: 2.0,
+};
+
 /** Full operator-provided ID map (for Tampermonkey refresh scripts / other accounts). */
 export const CATEGORY_ID_REFERENCE: HumanaticCategory[] = [
   { id: 72, key: "ssb", name: "SSB" },

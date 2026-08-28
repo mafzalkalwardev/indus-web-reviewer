@@ -36,9 +36,44 @@ export const config = {
   authStatePath: getEnv("HUMANATIC_AUTH_STATE", ".auth/humanatic.json"),
   browserProfilePath: getEnv("HUMANATIC_BROWSER_PROFILE", ".browser-profile"),
   grokApiKey: process.env.GROK_API_KEY || "",
+  /** Fresh secondary Groq/xAI key — rotated on 429 / failures. */
+  grokApiKey2: process.env.GROK_API_KEY2 || "",
+  /** Third Groq account — more Whisper/LLM quota headroom. */
+  grokApiKey3: process.env.GROK_API_KEY3 || "",
   grokBaseUrl: resolveGrokBaseUrl(),
   grokModel: resolveGrokModel(),
-  confidenceThreshold: Number(process.env.CONFIDENCE_THRESHOLD || "0.85"),
+  /** Cheaper/faster model tried when primary hits rate limits (often separate TPD quota). */
+  grokFallbackModel:
+    process.env.GROK_FALLBACK_MODEL?.trim() ||
+    ((process.env.GROK_API_KEY || process.env.GROK_API_KEY2 || process.env.GROK_API_KEY3 || "").startsWith(
+      "gsk_",
+    )
+      ? "llama-3.1-8b-instant"
+      : ""),
+  /** Free STT providers (preferred over paid OpenAI). */
+  deepgramApiKey: process.env.DEEPGRAM_API_KEY || "",
+  assemblyAiApiKey: process.env.ASSEMBLYAI_API_KEY || "",
+  /** Optional Gemini — reserved for future 2nd-opinion LLM (not required). */
+  geminiApiKey: process.env.GEMINI_API_KEY || "",
+  /**
+   * Accuracy-first mode (default on): stricter skip gate + category pick by
+   * expected value (payout × site accuracy) so we chase high ¢ without bleeding audits.
+   */
+  accuracyFirst: (process.env.ACCURACY_FIRST || "1") !== "0",
+  confidenceThreshold: (() => {
+    const raw = Number(process.env.CONFIDENCE_THRESHOLD || "0.85");
+    const accuracyFirst = (process.env.ACCURACY_FIRST || "1") !== "0";
+    // Soft floor when accuracy-first — allow volume mode at 0.88
+    if (accuracyFirst) return Math.max(raw, 0.85);
+    return raw;
+  })(),
+  /**
+   * Allow keyword-heuristic decisions (used when the LLM is rate-limited) to be
+   * SUBMITTED live. Off by default: the heuristic previously returned a
+   * hardcoded 0.88 against a 0.85 threshold, which made the confidence gate
+   * impossible to fail and shipped guesses to a live account.
+   */
+  heuristicSubmit: (process.env.HEURISTIC_SUBMIT || "0") === "1",
   maxGrokRetries: Number(process.env.MAX_GROK_RETRIES || "3"),
   initialBackoffMs: Number(process.env.INITIAL_BACKOFF_MS || "1000"),
   maxBackoffMs: Number(process.env.MAX_BACKOFF_MS || "16000"),
@@ -69,6 +104,17 @@ export const config = {
    * Set PRACTICE_MODE=0 only when ready for live audits.
    */
   practiceMode: (process.env.PRACTICE_MODE || "1") !== "0",
+  /**
+   * Mute call <audio> while it still plays through (Humanatic unlock).
+   * Whisper downloads the recording URL — speakers stay silent so you can work.
+   */
+  muteCallAudio: (process.env.MUTE_CALL_AUDIO || "1") !== "0",
+  /** Start / keep automation Chrome minimized (don't steal focus). */
+  backgroundChrome: (process.env.BACKGROUND_CHROME || "1") !== "0",
+  reviewPlaybackRate: Number(
+    process.env.REVIEW_PLAYBACK_RATE ||
+      ((process.env.ACCURACY_FIRST || "1") !== "0" ? "2.0" : "2.5"),
+  ),
 } as const;
 
 export type AppConfig = typeof config;

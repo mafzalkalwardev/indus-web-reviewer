@@ -1,0 +1,77 @@
+{
+  "updatedAt": "2026-08-08T12:21:27.746Z",
+  "categories": [
+    {
+      "categoryId": 78,
+      "name": "Rent Buzz: Why Calling",
+      "payoutCents": 2.6,
+      "payoutLabel": "2.6 ¢",
+      "lastAvailable": 0,
+      "lastStatus": "no_calls",
+      "firstSeenAt": "2026-08-06T22:50:00.000Z",
+      "lastSeenAt": "2026-08-08T12:21:27.745Z",
+      "everHadStock": true,
+      "submits": 0
+    },
+    {
+      "categoryId": 20,
+      "name": "Dealership Discussion",
+      "payoutCents": 2,
+      "payoutLabel": "2 ¢",
+      "lastAvailable": 1,
+      "lastStatus": "review",
+      "firstSeenAt": "2026-08-06T22:50:00.000Z",
+      "lastSeenAt": "2026-08-08T12:21:27.745Z",
+      "everHadStock": true,
+      "submits": 0
+    },
+    {
+      "categoryId": 223,
+      "name": "Home Services: Live Conversation",
+      "payoutCents": 1.9,
+      "payoutLabel": "1.9 ¢",
+      "lastAvailable": 1,
+      "lastStatus": "review",
+      "firstSeenAt": "2026-08-06T22:50:00.000Z",
+      "lastSeenAt": "2026-08-08T12:21:27.745Z",
+      "everHadStock": true,
+      "submits": 26
+    },
+    {
+      "categoryId": 87,
+      "name": "Department",
+      "payoutCents": 1.7,
+      "payoutLabel": "1.7 ¢",
+      "lastAvailable": 0,
+      "lastStatus": "no_calls",
+      "firstSeenAt": "2026-08-06T22:50:00.000Z",
+      "lastSeenAt": "2026-08-08T12:21:27.745Z",
+      "everHadStock": true,
+      "submits": 2
+    },
+    {
+      "categoryId": 3,
+      "name": "Inbound",
+      "payoutCents": 1.3,
+      "payoutLabel": "1.3 ¢",
+      "lastAvailable": 6,
+      "lastStatus": "review",
+      "firstSeenAt": "2026-08-06T22:50:00.000Z",
+      "lastSeenAt": "2026-08-08T12:21:27.745Z",
+      "everHadStock": true,
+      "submits": 9
+    },
+    {
+      "categoryId": 4,
+      "name": "Live conversation - outbound",
+      "payoutCents": 0.5,
+      "payoutLabel": "0.5 ¢",
+      "lastAvailable": 1,
+      "lastStatus": "review",
+      "firstSeenAt": "2026-08-06T22:50:00.000Z",
+      "lastSeenAt": "2026-08-08T12:21:27.745Z",
+      "everHadStock": true,
+      "submits": 0
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+[
+  {
+    "i": 3,
+    "text": "2026-08-04 11:20A cst -2.6¢ Inbound Handled by a qualified employee or interactive system Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+    "links": [],
+    "inputs": [],
+    "html": "\n<td style=\"border-bottom: 1px solid #d0d0d0;\" height=\"25\">\n2026-08-04\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\">\n11:20A cst\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\">\n-2.6¢\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\">\nInbound\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\" class=\"selection\">\nHandled by a qualified employee or interactive system\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\">\nCall is still being reviewed by other reviewers and is not eligible for Dispute yet.\n</td>\n"
+  },
+  {
+    "i": 4,
+    "text": "2026-08-03 4:54P cst -2.6¢ Inbound Handled by a qualified employee or interactive system Call may be disputed.",
+    "links": [
+      {
+        "text": "2026-08-03",
+        "href": "selection_review.cfm?cid=6001652304339",
+        "onclick": ""
+      },
+      {
+        "text": "4:54P cst",
+        "href": "selection_review.cfm?cid=6001652304339",
+        "onclick": ""
+      },
+      {
+        "text": "-2.6¢",
+        "href": "selection_review.cfm?cid=6001652304339",
+        "onclick": ""
+      },
+      {
+        "text": "Inbound",
+        "href": "selection_review.cfm?cid=6001652304339",
+        "onclick": ""
+      },
+      {
+        "text": "Handled by a qualified employee or interactive system",
+        "href": "selection_review.cfm?cid=6001652304339",
+        "onclick": ""
+      },
+      {
+        "text": "Call may be disputed.",
+        "href": "selection_review.cfm?cid=6001652304339",
+        "onclick": ""
+      }
+    ],
+    "inputs": [],
+    "html": "\n<td style=\"border-bottom: 1px solid #d0d0d0;\" height=\"25\">\n<a href=\"selection_review.cfm?cid=6001652304339\" style=\"color: red;\">\n2026-08-03\n</a>\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\">\n<a href=\"selection_review.cfm?cid=6001652304339\" style=\"color: red;\">\n4:54P cst\n</a>\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\">\n<a href=\"selection_review.cfm?cid=6001652304339\" style=\"color: red;\">\n-2.6¢\n</a>\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\">\n<a href=\"selection_review.cfm?cid=6001652304339\" style=\"color: red;\">\nInbound\n</a>\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\" class=\"selection\">\n<a href=\"selection_review.cfm?cid=6001652304339\" style=\"color: red;\">\nHandled by a qualified employee or interactive system\n</a>\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\">\n<a href=\"selection_review.cfm?cid=6001652304339\" style=\"color: red;\">\nCall may be disputed.\n</a>\n</td>\n"
+  },
+  {
+    "i": 5,
+    "text": "2026-08-03 3:59P cst -2.6¢ Inbound Handled by a qualified employee or interactive system Call may be disputed.",
+    "links": [
+      {
+        "text": "2026-08-03",
+        "href": "selection_review.cfm?cid=6001652230459",
+        "onclick": ""
+      },
+      {
+        "text": "3:59P cst",
+        "href": "selection_review.cfm?cid=6001652230459",
+        "onclick": ""
+      },
+      {
+        "text": "-2.6¢",
+        "href": "selection_review.cfm?cid=6001652230459",
+        "onclick": ""
+      },
+      {
+        "text": "Inbound",
+        "href": "selection_review.cfm?cid=6001652230459",
+        "onclick": ""
+      },
+      {
+        "text": "Handled by a qualified employee or interactive system",
+        "href": "selection_review.cfm?cid=6001652230459",
+        "onclick": ""
+      },
+      {
+        "text": "Call may be disputed.",
+        "href": "selection_review.cfm?cid=6001652230459",
+        "onclick": ""
+      }
+    ],
+    "inputs": [],
+    "html": "\n<td style=\"border-bottom: 1px solid #d0d0d0;\" height=\"25\">\n<a href=\"selection_review.cfm?cid=6001652230459\" style=\"color: red;\">\n2026-08-03\n</a>\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\">\n<a href=\"selection_review.cfm?cid=6001652230459\" style=\"color: red;\">\n3:59P cst\n</a>\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\">\n<a href=\"selection_review.cfm?cid=6001652230459\" style=\"color: red;\">\n-2.6¢\n</a>\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\">\n<a href=\"selection_review.cfm?cid=6001652230459\" style=\"color: red;\">\nInbound\n</a>\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\" class=\"selection\">\n<a href=\"selection_review.cfm?cid=6001652230459\" style=\"color: red;\">\nHandled by a qualified employee or interactive system\n</a>\n</td>\n<td style=\"border-bottom: 1px solid #d0d0d0;\">\n<a href=\"selection_review.cfm?cid=6001652230459\" style=\"color: red;\">\nCall may be disputed.\n</a>\n</td>\n"
+  }
+]

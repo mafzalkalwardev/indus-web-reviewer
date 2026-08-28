@@ -71,7 +71,11 @@ export class ReviewEngine {
         `Decision option ID not found in category options: ${decision.selected_option_id}`,
       );
     }
-    if (decision.confidence < config.confidenceThreshold) {
+    // Keyword heuristics are gated by explicit opt-in, not by the confidence gate.
+    if (decision.source === "heuristic" && !config.heuristicSubmit) {
+      throw new Error("Heuristic decision blocked (set HEURISTIC_SUBMIT=1 to allow)");
+    }
+    if (decision.source !== "heuristic" && decision.confidence < config.confidenceThreshold) {
       throw new Error(`Low Grok confidence: ${decision.confidence}`);
     }
   }
@@ -118,7 +122,10 @@ export class ReviewEngine {
       }
 
       stateRef.state = "FETCH_TRANSCRIPT";
-      transcript = await captureTranscript(this.page);
+      transcript = await captureTranscript(
+        this.page,
+        categoryRule.options.map((o) => o.label || ""),
+      );
       console.log(
         `[engine] Category=${categoryRule.category_name} options=${categoryRule.options.length} transcriptChars=${transcript.length}`,
       );
@@ -132,6 +139,7 @@ export class ReviewEngine {
       } catch (validationError) {
         const msg = (validationError as Error).message;
         const lowConfidence = msg.includes("Low Grok confidence");
+        const heuristicBlocked = msg.includes("Heuristic decision blocked");
         console.warn(`[engine] Skipping submission: ${msg}`);
         appendReviewLog({
           call_id: metadata.callId || `call-${Date.now()}`,
@@ -142,7 +150,11 @@ export class ReviewEngine {
           confidence: decision.confidence,
           reasoning: `${decision.reasoning} | SKIP: ${msg}`,
           latency_ms: Date.now() - started,
-          status: lowConfidence ? "skipped_low_confidence" : "skipped_error",
+          status: heuristicBlocked
+            ? "skipped_heuristic_blocked"
+            : lowConfidence
+              ? "skipped_low_confidence"
+              : "skipped_error",
         });
         this.summary.reviews_skipped += 1;
         return "skipped";

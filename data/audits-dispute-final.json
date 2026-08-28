@@ -1,0 +1,32 @@
+{
+  "scrapedAt": "2026-08-04T18:44:51.444Z",
+  "results": [
+    {
+      "cid": "6001652304339",
+      "url": "https://www.humanatic.com/pages/humfun/selection_review.cfm?cid=6001652304339",
+      "title": "Audit Call - Humanatic",
+      "preview": "Audit Call Review and discuss call ID# 6001652304339 Call Audio x1.0 Call Details Inbound = Not handled: nobody there, hung up during bridge, wrong number, spam Dealership Discussion = Correction: call never connected to a live, qualified agent Comments | 📌 This thread does not yet have any comments. To start a discussion on this call, click here. Review History [ Category 3 :: Inbound ] selection: Handled by a qualified employee or interactive system selected on 8/3 at 4:54 PM // -722 seconds :: 0% accurate Available Options: Handled by a qualified employee or interactive system Not handled:",
+      "hasDispute": false,
+      "hasAudio": true,
+      "finalUrl": "https://www.humanatic.com/pages/humfun/login.cfm",
+      "afterPreview": "Welcome to Humanatic! log in forgot your password?",
+      "successHint": false
+    },
+    {
+      "cid": "6001652230459",
+      "url": "https://www.humanatic.com/pages/humfun/selection_review.cfm?cid=6001652230459",
+      "title": "Audit Call - Humanatic",
+      "preview": "Audit Call Review and discuss call ID# 6001652230459 Call Audio x1.0 Call Details Inbound = Not handled: call ended while on hold Service Setter Booked = Correction: caller never connected to a live, qualified agent Comments | 📌 This thread does not yet have any comments. To start a discussion on this call, click here. Review History [ Category 3 :: Inbound ] selection: Handled by a qualified employee or interactive system selected on 8/3 at 3:59 PM // -301 seconds :: 0% accurate Available Options: Handled by a qualified employee or interactive system Not handled: call ended while on hold Not",
+      "hasDispute": false,
+      "hasAudio": true,
+      "finalUrl": "https://www.humanatic.com/pages/humfun/login.cfm",
+      "afterPreview": "Welcome to Humanatic! log in forgot your password?",
+      "successHint": false
+    }
+  ],
+  "listing": {
+    "negatives": [],
+    "mayDispute": [],
+    "disputed": []
+  }
+}

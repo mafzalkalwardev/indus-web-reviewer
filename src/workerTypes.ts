@@ -6,6 +6,7 @@ export type WorkerRunState =
   | "waiting"
   | "reviewing"
   | "break_room"
+  | "paused"
   | "error"
   | "stopped";
 
@@ -16,6 +17,15 @@ export type WorkerTarget = {
   practiceMode: boolean;
   /** Tampermonkey poll / refresh cadence (seconds). */
   refreshSeconds: number;
+  /** Auto-rotate category by EST traffic windows + local empty/hit learning. */
+  autoRotate?: boolean;
+  /** Soft-pause: worker stays alive but does not hunt/submit until resumed. */
+  paused?: boolean;
+  /**
+   * Watch mode: restore Chrome window + unmute call audio so you can see/hear.
+   * When false, Chrome stays quiet/minimized (background earnings mode).
+   */
+  watchBrowser?: boolean;
 };
 
 export type WorkerStatus = {
@@ -25,6 +35,10 @@ export type WorkerStatus = {
   message: string;
   updatedAt: string;
   pid: number | null;
+  /** Latest page-scene intelligence (kind / action / summary). */
+  sceneKind?: string;
+  sceneAction?: string;
+  sceneSummary?: string;
 };
 
 export type WorkerStateFile = {
@@ -39,6 +53,9 @@ export const defaultWorkerState = (): WorkerStateFile => ({
     enabled: false,
     practiceMode: true,
     refreshSeconds: 30,
+    autoRotate: true,
+    paused: false,
+    watchBrowser: false,
   },
   status: {
     state: "stopped",

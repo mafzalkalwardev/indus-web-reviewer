@@ -1,0 +1,232 @@
+{
+  "scrapedAt": "2026-08-07T10:03:50.809Z",
+  "eligible": 10,
+  "results": [
+    {
+      "audit": {
+        "cid": "6001653821445",
+        "date": "2026-08-05",
+        "time": "1:27P cst",
+        "earnings": "-2.6¢",
+        "selection": "Handled by a qualified employee or interactive system",
+        "notes": "Call may be disputed.",
+        "href": "https://www.humanatic.com/pages/humfun/selection_review.cfm?cid=6001653821445"
+      },
+      "verdict": {
+        "ourSelection": "Handled by a qualified employee or interactive system",
+        "correctInbound": "Not handled: live message left for another employee",
+        "weWereWrong": true,
+        "weWereRight": false,
+        "alreadyCommented": true
+      },
+      "action": "skip_already_commented"
+    },
+    {
+      "audit": {
+        "cid": "6001652749569",
+        "date": "2026-08-04",
+        "time": "11:20A cst",
+        "earnings": "-2.6¢",
+        "selection": "Handled by a qualified employee or interactive system",
+        "notes": "Call may be disputed.",
+        "href": "https://www.humanatic.com/pages/humfun/selection_review.cfm?cid=6001652749569"
+      },
+      "verdict": {
+        "ourSelection": "Correction: caller never connected to a live, qualified agent",
+        "correctInbound": "Not handled: call ended while on hold",
+        "weWereWrong": true,
+        "weWereRight": false,
+        "alreadyCommented": false
+      },
+      "action": "sorry",
+      "ok": true,
+      "detail": "Posted discussion"
+    },
+    {
+      "audit": {
+        "cid": "6001652304339",
+        "date": "2026-08-03",
+        "time": "4:54P cst",
+        "earnings": "-2.6¢",
+        "selection": "Handled by a qualified employee or interactive system",
+        "notes": "Call may be disputed.",
+        "href": "https://www.humanatic.com/pages/humfun/selection_review.cfm?cid=6001652304339"
+      },
+      "verdict": {
+        "ourSelection": "Handled by a qualified employee or interactive system",
+        "correctInbound": "Not handled: nobody there, hung up during bridge, wrong number, spam",
+        "weWereWrong": true,
+        "weWereRight": false,
+        "alreadyCommented": true
+      },
+      "action": "skip_already_commented"
+    },
+    {
+      "audit": {
+        "cid": "6001652277463",
+        "date": "2026-08-03",
+        "time": "4:28P cst",
+        "earnings": "-2.6¢",
+        "selection": "Handled by a qualified employee or interactive system",
+        "notes": "Call may be disputed.",
+        "href": "https://www.humanatic.com/pages/humfun/selection_review.cfm?cid=6001652277463"
+      },
+      "verdict": {
+        "ourSelection": "Handled by a qualified employee or interactive system",
+        "correctInbound": "Not handled: call ended while on hold",
+        "weWereWrong": true,
+        "weWereRight": false,
+        "alreadyCommented": false
+      },
+      "action": "sorry",
+      "ok": true,
+      "detail": "Posted discussion"
+    },
+    {
+      "audit": {
+        "cid": "6001652227990",
+        "date": "2026-08-03",
+        "time": "4:12P cst",
+        "earnings": "-2.6¢",
+        "selection": "Not handled: live conversation but no live message left",
+        "notes": "Call may be disputed.",
+        "href": "https://www.humanatic.com/pages/humfun/selection_review.cfm?cid=6001652227990"
+      },
+      "verdict": {
+        "ourSelection": "Not handled: live conversation but no live message left",
+        "correctInbound": "Handled by a qualified employee or interactive system",
+        "weWereWrong": true,
+        "weWereRight": false,
+        "alreadyCommented": false
+      },
+      "action": "sorry",
+      "ok": true,
+      "detail": "Posted discussion"
+    },
+    {
+      "audit": {
+        "cid": "6001652236701",
+        "date": "2026-08-03",
+        "time": "4:02P cst",
+        "earnings": "-2.6¢",
+        "selection": "Handled by a qualified employee or interactive system",
+        "notes": "Call may be disputed.",
+        "href": "https://www.humanatic.com/pages/humfun/selection_review.cfm?cid=6001652236701"
+      },
+      "verdict": {
+        "ourSelection": "Handled by a qualified employee or interactive system",
+        "correctInbound": "Not handled: reached voicemail and did not leave message",
+        "weWereWrong": true,
+        "weWereRight": false,
+        "alreadyCommented": false
+      },
+      "action": "sorry",
+      "ok": true,
+      "detail": "Posted discussion"
+    },
+    {
+      "audit": {
+        "cid": "6001652234466",
+        "date": "2026-08-03",
+        "time": "4:01P cst",
+        "earnings": "-2.6¢",
+        "selection": "Handled by a qualified employee or interactive system",
+        "notes": "Call may be disputed.",
+        "href": "https://www.humanatic.com/pages/humfun/selection_review.cfm?cid=6001652234466"
+      },
+      "verdict": {
+        "ourSelection": "Handled by a qualified employee or interactive system",
+        "correctInbound": "Not handled: nobody there, hung up during bridge, wrong number, spam",
+        "weWereWrong": true,
+        "weWereRight": false,
+        "alreadyCommented": false
+      },
+      "action": "sorry",
+      "ok": true,
+      "detail": "Posted discussion"
+    },
+    {
+      "audit": {
+        "cid": "6001652230459",
+        "date": "2026-08-03",
+        "time": "3:59P cst",
+        "earnings": "-2.6¢",
+        "selection": "Handled by a qualified employee or interactive system",
+        "notes": "Call may be disputed.",
+        "href": "https://www.humanatic.com/pages/humfun/selection_review.cfm?cid=6001652230459"
+      },
+      "verdict": {
+        "ourSelection": "Handled by a qualified employee or interactive system",
+        "correctInbound": "Not handled: call ended while on hold",
+        "weWereWrong": true,
+        "weWereRight": false,
+        "alreadyCommented": true
+      },
+      "action": "skip_already_commented"
+    },
+    {
+      "audit": {
+        "cid": "6001652148671",
+        "date": "2026-08-03",
+        "time": "3:13P cst",
+        "earnings": "-2.6¢",
+        "selection": "Not handled: nobody there, hung up during bridge, wrong number, spam",
+        "notes": "Call may be disputed.",
+        "href": "https://www.humanatic.com/pages/humfun/selection_review.cfm?cid=6001652148671"
+      },
+      "verdict": {
+        "ourSelection": "Not handled: nobody there, hung up during bridge, wrong number, spam",
+        "correctInbound": "Not handled: live conversation but no live message left",
+        "weWereWrong": true,
+        "weWereRight": false,
+        "alreadyCommented": false
+      },
+      "action": "sorry",
+      "ok": true,
+      "detail": "Posted discussion"
+    },
+    {
+      "audit": {
+        "cid": "6001652137603",
+        "date": "2026-08-03",
+        "time": "3:07P cst",
+        "earnings": "-2.6¢",
+        "selection": "Handled by a qualified employee or interactive system",
+        "notes": "Call may be disputed.",
+        "href": "https://www.humanatic.com/pages/humfun/selection_review.cfm?cid=6001652137603"
+      },
+      "verdict": {
+        "ourSelection": "Handled by a qualified employee or interactive system",
+        "correctInbound": "Not handled: live message left for another employee",
+        "weWereWrong": true,
+        "weWereRight": false,
+        "alreadyCommented": false
+      },
+      "action": "sorry",
+      "ok": true,
+      "detail": "Posted discussion"
+    }
+  ],
+  "after": {
+    "stillMayDispute": 10,
+    "apologiesOrDisputed": [
+      "2026-08-06 6:00P cst -2¢ Dealership Discussion Correction: call never connected to a live, qualified agent Call is still being reviewed by other reviewers and is not eligible for Dispute yet.",
+      "2026-08-05 1:27P cst -2.6¢ Inbound Handled by a qualified employee or interactive system Call may be disputed.",
+      "2026-08-04 11:20A cst -2.6¢ Inbound Handled by a qualified employee or interactive system Call may be disputed.",
+      "2026-08-03 4:54P cst -2.6¢ Inbound Handled by a qualified employee or interactive system Call may be disputed.",
+      "2026-08-03 4:28P cst -2.6¢ Inbound Handled by a qualified employee or interactive system Call may be disputed.",
+      "2026-08-03 4:12P cst -2.6¢ Inbound Not handled: live conversation but no live message left Call may be disputed.",
+      "2026-08-03 4:02P cst -2.6¢ Inbound Handled by a qualified employee or interactive system Call may be disputed.",
+      "2026-08-03 4:01P cst -2.6¢ Inbound Handled by a qualified employee or interactive system Call may be disputed.",
+      "2026-08-03 3:59P cst -2.6¢ Inbound Handled by a qualified employee or interactive system Call may be disputed.",
+      "2026-08-03 3:13P cst -2.6¢ Inbound Not handled: nobody there, hung up during bridge, wrong number, spam Call may be disputed.",
+      "2026-08-03 3:07P cst -2.6¢ Inbound Handled by a qualified employee or interactive system Call may be disputed."
+    ]
+  },
+  "summary": {
+    "dispute": 0,
+    "sorry": 7,
+    "skipped": 3,
+    "failed": 0
+  }
+}

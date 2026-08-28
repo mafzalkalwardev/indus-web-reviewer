@@ -1,0 +1,388 @@
+{
+  "scrapedAt": "2026-08-08T09:09:46.048Z",
+  "profileName": "Manuel Hick",
+  "todayEarningsLabel": "—",
+  "todayEarningsCents": null,
+  "balanceLabel": "—",
+  "balanceCents": null,
+  "periodLabel": "",
+  "accuracyOverallLabel": "66%",
+  "accuracyOverallPct": 66,
+  "categoryAccuracy": [
+    {
+      "name": "Inbound",
+      "accuracyPct": 66,
+      "raw": "Inbound 66%"
+    },
+    {
+      "name": "Live conversation - outbound",
+      "accuracyPct": 0,
+      "raw": "Live conversation - outbound 0%"
+    },
+    {
+      "name": "Dealership Discussion",
+      "accuracyPct": 0,
+      "raw": "Dealership Discussion 0%"
+    },
+    {
+      "name": "Rent Buzz: Why Calling",
+      "accuracyPct": 0,
+      "raw": "Rent Buzz: Why Calling 0%"
+    },
+    {
+      "name": "Department",
+      "accuracyPct": 0,
+      "raw": "Department 0%"
+    },
+    {
+      "name": "Home Services: Live Conversation",
+      "accuracyPct": 0,
+      "raw": "Home Services: Live Conversation 0%"
+    }
+  ],
+  "leaderboard": [
+    {
+      "rank": 1,
+      "name": "Bite-size",
+      "scoreLabel": "$13.95",
+      "scoreCents": 1395,
+      "isYou": false
+    },
+    {
+      "rank": 2,
+      "name": "Reduana",
+      "scoreLabel": "$10.95",
+      "scoreCents": 1095,
+      "isYou": false
+    },
+    {
+      "rank": 3,
+      "name": "Fox Mulder",
+      "scoreLabel": "$10.50",
+      "scoreCents": 1050,
+      "isYou": false
+    },
+    {
+      "rank": 4,
+      "name": "Space Girl",
+      "scoreLabel": "$10.20",
+      "scoreCents": 1020,
+      "isYou": false
+    },
+    {
+      "rank": 5,
+      "name": "Brand New Day",
+      "scoreLabel": "$9.60",
+      "scoreCents": 960,
+      "isYou": false
+    },
+    {
+      "rank": 6,
+      "name": "Grit",
+      "scoreLabel": "$9.60",
+      "scoreCents": 960,
+      "isYou": false
+    },
+    {
+      "rank": 8,
+      "name": "Hank Scorpio",
+      "scoreLabel": "$9.00",
+      "scoreCents": 900,
+      "isYou": false
+    },
+    {
+      "rank": 9,
+      "name": "L U C I D",
+      "scoreLabel": "$8.79",
+      "scoreCents": 879,
+      "isYou": false
+    },
+    {
+      "rank": 13,
+      "name": "Ascends",
+      "scoreLabel": "$7.20",
+      "scoreCents": 720,
+      "isYou": false
+    },
+    {
+      "rank": 14,
+      "name": "Shrewd",
+      "scoreLabel": "$7.05",
+      "scoreCents": 705,
+      "isYou": false
+    },
+    {
+      "rank": 15,
+      "name": "Optimus primal",
+      "scoreLabel": "$7.05",
+      "scoreCents": 705,
+      "isYou": false
+    },
+    {
+      "rank": 16,
+      "name": "josegregorio7",
+      "scoreLabel": "$6.90",
+      "scoreCents": 690,
+      "isYou": false
+    },
+    {
+      "rank": 17,
+      "name": "Eternal",
+      "scoreLabel": "$6.30",
+      "scoreCents": 630,
+      "isYou": false
+    },
+    {
+      "rank": 18,
+      "name": "Banshee",
+      "scoreLabel": "$6.30",
+      "scoreCents": 630,
+      "isYou": false
+    },
+    {
+      "rank": 19,
+      "name": "Karosu",
+      "scoreLabel": "$6.15",
+      "scoreCents": 615,
+      "isYou": false
+    },
+    {
+      "rank": 20,
+      "name": "Edan",
+      "scoreLabel": "$6.15",
+      "scoreCents": 615,
+      "isYou": false
+    },
+    {
+      "rank": 21,
+      "name": "Frankenstein",
+      "scoreLabel": "$5.70",
+      "scoreCents": 570,
+      "isYou": false
+    },
+    {
+      "rank": 22,
+      "name": "Doctor",
+      "scoreLabel": "$5.55",
+      "scoreCents": 555,
+      "isYou": false
+    },
+    {
+      "rank": 23,
+      "name": "Luis Enrique Pineda",
+      "scoreLabel": "$5.55",
+      "scoreCents": 555,
+      "isYou": false
+    },
+    {
+      "rank": 24,
+      "name": "Tai sui",
+      "scoreLabel": "$5.10",
+      "scoreCents": 510,
+      "isYou": false
+    },
+    {
+      "rank": 25,
+      "name": "OkoroS.",
+      "scoreLabel": "$4.80",
+      "scoreCents": 480,
+      "isYou": false
+    },
+    {
+      "rank": 26,
+      "name": "Emily Daniela Ortega Boliva",
+      "scoreLabel": "$4.80",
+      "scoreCents": 480,
+      "isYou": false
+    },
+    {
+      "rank": 27,
+      "name": "Adholla",
+      "scoreLabel": "$4.50",
+      "scoreCents": 450,
+      "isYou": false
+    },
+    {
+      "rank": 28,
+      "name": "MeWorking",
+      "scoreLabel": "$4.35",
+      "scoreCents": 435,
+      "isYou": false
+    },
+    {
+      "rank": 29,
+      "name": "jordan malone",
+      "scoreLabel": "$4.32",
+      "scoreCents": 432,
+      "isYou": false
+    },
+    {
+      "rank": 30,
+      "name": "Humanaddict",
+      "scoreLabel": "$4.20",
+      "scoreCents": 420,
+      "isYou": false
+    },
+    {
+      "rank": 31,
+      "name": "LaNgGoT",
+      "scoreLabel": "$4.05",
+      "scoreCents": 405,
+      "isYou": false
+    },
+    {
+      "rank": 32,
+      "name": "Musafir",
+      "scoreLabel": "$3.72",
+      "scoreCents": 372,
+      "isYou": false
+    },
+    {
+      "rank": 33,
+      "name": "OG LOC",
+      "scoreLabel": "$3.60",
+      "scoreCents": 360,
+      "isYou": false
+    },
+    {
+      "rank": 36,
+      "name": "Clyde Barrow",
+      "scoreLabel": "$3.39",
+      "scoreCents": 339,
+      "isYou": false
+    },
+    {
+      "rank": 37,
+      "name": "Cecily",
+      "scoreLabel": "$3.30",
+      "scoreCents": 330,
+      "isYou": false
+    },
+    {
+      "rank": 38,
+      "name": "GUESS77",
+      "scoreLabel": "$2.76",
+      "scoreCents": 276,
+      "isYou": false
+    },
+    {
+      "rank": 39,
+      "name": "poe",
+      "scoreLabel": "$2.70",
+      "scoreCents": 270,
+      "isYou": false
+    },
+    {
+      "rank": 40,
+      "name": "Mary Cate",
+      "scoreLabel": "$1.65",
+      "scoreCents": 165,
+      "isYou": false
+    },
+    {
+      "rank": 41,
+      "name": "LittleLion",
+      "scoreLabel": "$1.50",
+      "scoreCents": 150,
+      "isYou": false
+    },
+    {
+      "rank": 42,
+      "name": "vogue",
+      "scoreLabel": "$1.05",
+      "scoreCents": 105,
+      "isYou": false
+    },
+    {
+      "rank": 43,
+      "name": "Shein0327",
+      "scoreLabel": "$1.05",
+      "scoreCents": 105,
+      "isYou": false
+    },
+    {
+      "rank": 44,
+      "name": "sid ney",
+      "scoreLabel": "$0.75",
+      "scoreCents": 75,
+      "isYou": false
+    },
+    {
+      "rank": 45,
+      "name": "The",
+      "scoreLabel": "29",
+      "scoreCents": null,
+      "isYou": false
+    },
+    {
+      "rank": 46,
+      "name": "Uzoga Favour",
+      "scoreLabel": "$0.23",
+      "scoreCents": 23,
+      "isYou": false
+    },
+    {
+      "rank": 47,
+      "name": "Manuel Hick",
+      "scoreLabel": "$0.22",
+      "scoreCents": 22,
+      "isYou": true
+    },
+    {
+      "rank": 48,
+      "name": "The Gladiator",
+      "scoreLabel": "$0.19",
+      "scoreCents": 19,
+      "isYou": false
+    },
+    {
+      "rank": 49,
+      "name": "itz akbaA",
+      "scoreLabel": "$0.09",
+      "scoreCents": 9,
+      "isYou": false
+    },
+    {
+      "rank": 50,
+      "name": "Silas Burtuka",
+      "scoreLabel": "$0.07",
+      "scoreCents": 7,
+      "isYou": false
+    },
+    {
+      "rank": 51,
+      "name": "Braga Yonli",
+      "scoreLabel": "$0.04",
+      "scoreCents": 4,
+      "isYou": false
+    },
+    {
+      "rank": 52,
+      "name": "Sadpara",
+      "scoreLabel": "$0.04",
+      "scoreCents": 4,
+      "isYou": false
+    },
+    {
+      "rank": 53,
+      "name": "Chinemerem Peter Nweke",
+      "scoreLabel": "$0.01",
+      "scoreCents": 1,
+      "isYou": false
+    }
+  ],
+  "yourRank": 47,
+  "leaderboardTitle": "Leaderboard",
+  "pagesVisited": [
+    "https://www.humanatic.com/pages/humfun/profile.cfm",
+    "https://www.humanatic.com/pages/humfun/payout.cfm",
+    "https://www.humanatic.com/pages/humfun/accuracy.cfm",
+    "https://www.humanatic.com/pages/humfun/leaderboard.cfm"
+  ],
+  "rawHints": [
+    "Humanatic The earnings page is available each day after 10:00a cst."
+  ],
+  "goalDollars": 100,
+  "goalProgressPct": 0,
+  "goalTip": "$100/mo · far behind · need ~$3.23/day · today — · day 8/31 · Leaderboard #47."
+}

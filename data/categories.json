@@ -1,75 +1,8 @@
 [
   {
-    "category_id": "3",
-    "category_name": "Inbound",
-    "rules": "Category Instructions: Inbound The purpose of the category Inbound is to determine whether or not the call was handled by a live, qualified employee or interactive system. This category is the baseline for most of the other categories in Humanatic. To maintain high performance in downstream categories, you should first understand the fundamentals of what is considered a connected, handled call.\n\nHelpful information:Not every conversation between two people will be considered handled. Specific criteria must be met for it to be considered handled by a qualified employee or interactive system. Qualified employee: An employee that is able to assist a caller with his or her inquiry. The qualified employee may at times need to call",
-    "options": [
-      {
-        "id": "radio1_1",
-        "label": "Handled by a qualified employee or interactive system",
-        "criteria": "Handled by a qualified employee or interactive system",
-        "value": "on"
-      },
-      {
-        "id": "radio2_1",
-        "label": "Not handled: call ended while on hold",
-        "criteria": "Not handled: call ended while on hold",
-        "value": "on"
-      },
-      {
-        "id": "radio3_1",
-        "label": "Not handled: nobody there, hung up during bridge, wrong number, spam",
-        "criteria": "Not handled: nobody there, hung up during bridge, wrong number, spam",
-        "value": "on"
-      },
-      {
-        "id": "radio4_1",
-        "label": "Not handled: other",
-        "criteria": "Not handled: other",
-        "value": "on"
-      },
-      {
-        "id": "radio5_1",
-        "label": "Not handled: left message on voicemail",
-        "criteria": "Not handled: left message on voicemail",
-        "value": "on"
-      },
-      {
-        "id": "radio6_1",
-        "label": "Not handled: reached voicemail and did not leave message",
-        "criteria": "Not handled: reached voicemail and did not leave message",
-        "value": "on"
-      },
-      {
-        "id": "radio7_1",
-        "label": "Not handled: live message left for another employee",
-        "criteria": "Not handled: live message left for another employee",
-        "value": "on"
-      },
-      {
-        "id": "radio8_1",
-        "label": "Not handled: live conversation but no live message left",
-        "criteria": "Not handled: live conversation but no live message left",
-        "value": "on"
-      }
-    ]
-  },
-  {
     "category_id": "4",
     "category_name": "Live conversation - outbound",
     "rules": "Category Instructions: Live Conversation - Outbound The purpose of this category Live Conversation - Outbound is to determine if the person who placed a call reached the intended contact, a spokesperson for the intended contact, or the business they were intending to reach.\n\nHelpful information:Connected: A call is considered connected when the person who placed the call successfully reached an intended contact, a spokesperson for the intended contact, or the business they were intending to reach. The call does not need to be considered handled, nor does it matter if the intended contact hung up or if the line disconnected. If the person who placed the call successfully reached the intended contact, the outcome of that call is irrelevant. Intended Contact: The intended contact is defined as the individual the caller was attempting to reach. This will most often be made clear by the caller stating the name of who they are trying to reach. For automotive calls, when, and only when, the caller does not specify the name of the person they are trying to reach, the intended contact is considered the owner or driver of the vehicle. However, if the caller specified who they intended to contact by name, but that person is not the owner or driver of the vehicle, the intended contact is still considered the person the caller specified by name. Spokesperson: Calls may also be considered connected if the caller reaches an individual that handled the call as a spokesperson of the intended contact. A spokesperson may be someone such as a spouse, family member, or friend that speaks on behalf of the intended party This, however, is different from a conversation with someone who DOES NOT handle the call as a spokesperson, and instead takes a live message so that the intended party can handle the reason for the call. One-sided recordings: For some outbound calls, you may only hear the caller's voice. This is by design. Please review one-sided recordings the same as you would regular outbound call, based on the instructions below. Here are the options: Connected Select this option if the caller reached the intended contact, regardless of if the call was handled. Select this option if the caller has placed an outbound business-related call from one business to another and has reached the intended contact. Currently, most calls of this nature are placed by Call Box and Car Wars. However, there are other businesses that place calls of this nature, too. These calls will sometimes sound like inbound calls because they are answered by dealerships, clinics, or other places of business. However, these are true outbound calls placed to reach other businesses to discuss things such as product demos, industry forums, or business-related product/software sales or support, etc. Example: “Hi, Bob. I am calling from Callbox. I saw your demo request and wanted to get something scheduled.” Example: “Hello, Susan. We were calling to see if you are going to be attending the dental forum next week.” Select this option if you only hear one voice, but you can tell that the call connected to the intended contact. This type of call is considered a one-sided recording, and it is done by design. It should be reviewed using the same instructions used for all other Live Conversation - Outbound calls. Select this option if the caller reached the intended contact, even if the intended contact informed the caller that they are not the current owner or driver of the vehicle. Often, the intended contact will provide the caller with contact information for the vehicle's owner or driver. The intended contact may be unable to provide exact details that the caller is requesting, but that does not alter the fact that the caller has still successfully connected with the individual that he or she was attempting to reach. Select this option if the caller reached the intended contact, even if the caller immediately said they will need to call back. Select this option if the caller reached the intended contact and they asked to be removed from the calling list. Select this option if the caller reached the intended contact but the call dropped during the conversation. Select this option if the intended contact hung up after the caller established who they are. This will sound like a call recipient answering a call, the caller providing an introductory greeting, stating who they are, where they are calling from, or why they are calling, and then the call recipient hanging up in response to that introductory greeting from the caller. Calls of this nature ARE considered connected to the intended contact UNLESS it is clear that the call recipient is NOT the intended contact This is not the same scenario as a short recording where the caller has established a connection with the call recipient. Select this option if the caller reached an individual that spoke on behalf of the intended contact. These types of calls will have the inquiry handled by a spokesperson for the intended contact. This may be a spouse, family member, or friend of the intended contact that handled the conversation on behalf of that intended contact. This is different from someone who did not or could not handle an inquiry for the intended party and instead took a live message for the intended contact. Select this option if the caller is connected to an interactive system for payoff or other information that they intended to reach This will sound like an automated service that asks the caller questions and requires answers to be made by phone selections or voice commands. Left a Message Select this option if the caller reached voicemail and left a message. Select this option if the caller left a live message for the intended contact. Live messages occur when the caller has reached a live individual, but it is not the intended contact or an individual that can speak on behalf of the intended contact. The individual who was reached will take the caller’s information to be passed onto the intended contact. Select this option if you only hear one voice, but you can tell that the caller has reached voicemail and left a message for the intended contact. This is considered a one-sided recording, and it is done by design Not the right person / no message Select this option if the caller had the wrong number. Select this option if the call reached voicemail and the caller does not leave a message. This could be because the caller hung up or the voicemail box was full. Select this option if the call only lasted a few seconds and no conversation was heard. This is different from 'no audio' calls that have a 00/nan in the upper right portion of the audio bar, calls that remain gray in color, and/or calls that do not play at all. Select this option if speaking can be heard, but it is not discernible or it is not an established connection or conversation between the caller and call recipient. Example: Only background speaking can be heard on the caller’s end, but it the caller is not speaking to the call recipient. Example: One side of the call answered the call with a “hello,” but the other end of the call did not reply. Select this option if the call is a spam call such as a recorded advertisement. If you have any questions, please visit our FAQ Practice Questions 00:00 01:02 1Connected to intended party 2Left a message 3Not the right person or no message 00:00 00:29 1Connected to intended party 2Left a message 3Not the right person or no message 00:00 00:32 1Connected to intended party 2Left a message 3Not the right person or no message REVIEW CALLS",
-    "options": []
-  },
-  {
-    "category_id": "87",
-    "category_name": "Department",
-    "rules": "Review Category Instructions: Department The purpose of the category Department is to determine what was discussed during a connected call. Helpful terms/information: It does not matter which Department handled the call. Instead, you should be listening to what was being discussed regardless of the Department taking the call. By listening for what is discussed you are helping ensure that the call data is routed to the appropriate individuals in the appropriate departments who can utilize that data. If the call does not connect to a live, qualified agent, it does not matter what was being discussed. When a call is considered Not Connected you should select \"Correction: call was not connected with a qualified agent\". Qualified agent: An employee that is able to assist a caller with his or her inquiry. The qualified employee may at times need to call back in order to provide an answer or solution. As long as the same employee is the one intending to return the call, it is still considered connected Unqualified agent: An employee that is not able to assist the caller with his or her inquiry. A caller may reach an unqualified employee and hold a conversation, but it is not considered a connected call unless the caller is connected to someone who can assist him or her with their inquiry. Here are the options: Sales Select this option if the caller's inquiry is vehicle sales related. Select this option if the caller is inquiring about a vehicle for sale. Select this option if the caller is discussing a possible trade-in. Select this option if the call is about sales billing or sales paperwork. Select this option if the caller asks about hours of operation for the sales department. Service Select this option if the caller's inquiry was service related. Select this option if the caller asks for pricing of a service. Select this option if the caller asks if a service is provided by the business. Select this option if the call is about key cutting or key fob programming. Select this option if the call is about tire installation. Select this option if the call is about service billing or service paperwork. Select this option if the caller asks about hours of operation for the service department. Select this option if the caller asks about both parts and service. Select this option if the caller asks about warranty coverage. Parts Select this option if the caller's inquiry was parts related and no service is discussed. Remember: Keys are not considered parts. Select this option if the caller's inquiry is about tires only and no installation or service is discussed. Select this option if the caller asks for pricing of parts and no service is discussed. Select this option if the caller asks if a part is available and no service is discussed. Other Select this option if the discussion was NOT Sales, Service, or Parts related. Select this option if the call is only personal discussion. Select this option if the call is about plates. Select this option if the caller is calling to find and retrieve personal belongings that were accidentally left behind at the business. Select this option if the call is for the body shop or collision department Select this option if the call is only about a car wash Correction: call was not connected with a qualified agent Audio only consists of dial tone, fax machine, or other sounds. Audio is unclear because it is a garbled or distorted recording. Call is only a few seconds in length and contains no clear audio or conversation. Call consisted of music from start to finish. Call connection is lost during conversation and no contact information was shared and/or no appointment discussion took place. Call consisted of perpetual ringing from start to finish. Caller hung up during an after hours greeting or other business recording. Caller hung up during the bridge greeting. A bridge greeting is a recorded message that answers the phone and offers a menu such as \"For sales press 1, for service press 2, for parts press 3\" Caller reached an answering machine but did not leave a voicemail message. Caller reached an answering machine but the mailbox was full. Caller reached an answering machine but the recording contained no words. Caller did not connect to the intended individual or a qualified employee and ended the call without leaving a live message. Caller was unable to be connected to the desired department and no message was left. Select this option if the caller has the wrong number. Select this option if the receptionist or agent answers, but the caller is not on the other end of the call. If you have any questions, please visit our FAQ REVIEW CALLS",
-    "options": []
-  },
-  {
-    "category_id": "223",
-    "category_name": "Home Services: Live Conversation",
-    "rules": "Helpful information:Answering Service: A service that answers phone calls on behalf of another business. Answering service agents will often fully handle a business opportunity by receiving a caller’s information and the details of his or her service needs, and then promise a call back from a dispatcher, technician, or employee of the business to finalize business and appointment opportunities. These types of calls represent live conversations about services, pricing, and potential new appointments. Qualified agent: An agent that is able to assist a caller with his or her inquiry. The qualified employee may at times need to call back in order to provide an answer or solution. Unqualified agent: An agent that is not able to assist the caller with his or her inquiry. This is not the same as an answering service that handles a business opportunity and promises a call back from a dispatcher, technician, or employee of the business. REMINDER: The rules for the Inbound category DO NOT apply to this category. This category has its own set of rules regarding connected and not connected calls. Here are the options: Live conversation about service / pricing / potential new appointment Select this option if the call is handled by an answering service or qualified agent and: Represents a potential new appointment opportunity Caller discusses a particular service they are interested in Caller asks about price or availability of a service Caller asks about specific details of a service Caller asks for a price quote Agent needs to check to see if that service is offered Live conversation about an existing appointment Select this option if the call is handled by an answering service or qualified agent and: Caller discusses an upcoming existing appointment Caller discusses an appointment that is currently taking place Caller discusses rescheduling an existing appointment Caller cancels an existing appointment Live conversation not about an appointment Select this option if the call is handled by an answering service or qualified agent but: The call is not about a new or existing appointment The call is a general discussion that does not represent a business opportunity Caller is a current employee or technician Caller is only calling about business hours Caller is calling about employment opportunities Caller is only asking for directions Caller is only trying to sell something Caller never connected to a live, qualified agent Select this option if: The call never connected to the intended person, a qualified agent, or an answering service agent that was able to handle the call Remember: Answering services that handle a business opportunity by receiving the caller’s information and service needs, and promise a call back from a dispatcher, technician, or business employee to book an appointment, are considered connected calls and should be reviewed accordingly. The call reached voicemail The caller was left on hold The call connection was lost The caller had the wrong number The audio is unclear because it is a garbled or distorted recording The call is only a few seconds in length and contains no clear audio or conversation The call consisted of music from start to finish The call consisted of perpetual ringing from start to finish The caller hung up during an after hours greeting or other business recording The caller hung up during the bridge greeting A bridge greeting is a recorded message that answers the phone and offers a menu such as \"For sales press 1, for service press 2, for parts press 3\" The caller was offered the option of leaving a message with an unqualified employee but declined to leave a live message If you have any questions, please visit our FAQ REVIEW CALLS",
     "options": []
   },
   {
@@ -241,10 +174,175 @@
     "rules": "- Break After This Call",
     "options": [
       {
-        "id": "humfun_take_a_break_checkbox",
-        "label": "Break After This Call",
-        "criteria": "Break After This Call",
-        "value": "on"
+        "id": "987654",
+        "label": "Handled by a qualified employee or interactive system",
+        "criteria": "Handled by a qualified employee or interactive system",
+        "value": "987654"
+      },
+      {
+        "id": "127599",
+        "label": "Not handled: call ended while on hold",
+        "criteria": "Not handled: call ended while on hold",
+        "value": "127599"
+      },
+      {
+        "id": "127600",
+        "label": "Not handled: nobody there, hung up during bridge, wrong number, spam",
+        "criteria": "Not handled: nobody there, hung up during bridge, wrong number, spam",
+        "value": "127600"
+      },
+      {
+        "id": "127601",
+        "label": "Not handled: other",
+        "criteria": "Not handled: other",
+        "value": "127601"
+      },
+      {
+        "id": "127603",
+        "label": "Not handled: left message on voicemail",
+        "criteria": "Not handled: left message on voicemail",
+        "value": "127603"
+      },
+      {
+        "id": "127604",
+        "label": "Not handled: reached voicemail and did not leave message",
+        "criteria": "Not handled: reached voicemail and did not leave message",
+        "value": "127604"
+      },
+      {
+        "id": "127605",
+        "label": "Not handled: live message left for another employee",
+        "criteria": "Not handled: live message left for another employee",
+        "value": "127605"
+      },
+      {
+        "id": "127606",
+        "label": "Not handled: live conversation but no live message left",
+        "criteria": "Not handled: live conversation but no live message left",
+        "value": "127606"
+      }
+    ]
+  },
+  {
+    "category_id": "87",
+    "category_name": "Department",
+    "rules": "Review Category Instructions: Department The purpose of the category Department is to determine what was discussed during a connected call. Helpful terms/information: It does not matter which Department handled the call. Instead, you should be listening to what was being discussed regardless of the Department taking the call. By listening for what is discussed you are helping ensure that the call data is routed to the appropriate individuals in the appropriate departments who can utilize that data. If the call does not connect to a live, qualified agent, it does not matter what was being discussed. When a call is considered Not Connected you should select \"Correction: call was not connected with a qualified agent\". Qualified agent: An employee that is able to assist a caller with his or her inquiry. The qualified employee may at times need to call back in order to provide an answer or solution. As long as the same employee is the one intending to return the call, it is still considered connected Unqualified agent: An employee that is not able to assist the caller with his or her inquiry. A caller may reach an unqualified employee and hold a conversation, but it is not considered a connected call unless the caller is connected to someone who can assist him or her with their inquiry. Here are the options: Sales Select this option if the caller's inquiry is vehicle sales related. Select this option if the caller is inquiring about a vehicle for sale. Select this option if the caller is discussing a possible trade-in. Select this option if the call is about sales billing or sales paperwork. Select this option if the caller asks about hours of operation for the sales department. Service Select this option if the caller's inquiry was service related. Select this option if the caller asks for pricing of a service. Select this option if the caller asks if a service is provided by the business. Select this option if the call is about key cutting or key fob programming. Select this option if the call is about tire installation. Select this option if the call is about service billing or service paperwork. Select this option if the caller asks about hours of operation for the service department. Select this option if the caller asks about both parts and service. Select this option if the caller asks about warranty coverage. Parts Select this option if the caller's inquiry was parts related and no service is discussed. Remember: Keys are not considered parts. Select this option if the caller's inquiry is about tires only and no installation or service is discussed. Select this option if the caller asks for pricing of parts and no service is discussed. Select this option if the caller asks if a part is available and no service is discussed. Other Select this option if the discussion was NOT Sales, Service, or Parts related. Select this option if the call is only personal discussion. Select this option if the call is about plates. Select this option if the caller is calling to find and retrieve personal belongings that were accidentally left behind at the business. Select this option if the call is for the body shop or collision department Select this option if the call is only about a car wash Correction: call was not connected with a qualified agent Audio only consists of dial tone, fax machine, or other sounds. Audio is unclear because it is a garbled or distorted recording. Call is only a few seconds in length and contains no clear audio or conversation. Call consisted of music from start to finish. Call connection is lost during conversation and no contact information was shared and/or no appointment discussion took place. Call consisted of perpetual ringing from start to finish. Caller hung up during an after hours greeting or other business recording. Caller hung up during the bridge greeting. A bridge greeting is a recorded message that answers the phone and offers a menu such as \"For sales press 1, for service press 2, for parts press 3\" Caller reached an answering machine but did not leave a voicemail message. Caller reached an answering machine but the mailbox was full. Caller reached an answering machine but the recording contained no words. Caller did not connect to the intended individual or a qualified employee and ended the call without leaving a live message. Caller was unable to be connected to the desired department and no message was left. Select this option if the caller has the wrong number. Select this option if the receptionist or agent answers, but the caller is not on the other end of the call. If you have any questions, please visit our FAQ REVIEW CALLS",
+    "options": [
+      {
+        "id": "85047",
+        "label": "Sales",
+        "criteria": "Sales",
+        "value": "85047"
+      },
+      {
+        "id": "85048",
+        "label": "Service",
+        "criteria": "Service",
+        "value": "85048"
+      },
+      {
+        "id": "85049",
+        "label": "Parts",
+        "criteria": "Parts",
+        "value": "85049"
+      },
+      {
+        "id": "85050",
+        "label": "Other",
+        "criteria": "Other",
+        "value": "85050"
+      },
+      {
+        "id": "733304",
+        "label": "Correction: call was not connected with a qualified agent",
+        "criteria": "Correction: call was not connected with a qualified agent",
+        "value": "733304"
+      }
+    ]
+  },
+  {
+    "category_id": "223",
+    "category_name": "Home Services: Live Conversation",
+    "rules": "Helpful information:Answering Service: A service that answers phone calls on behalf of another business. Answering service agents will often fully handle a business opportunity by receiving a caller’s information and the details of his or her service needs, and then promise a call back from a dispatcher, technician, or employee of the business to finalize business and appointment opportunities. These types of calls represent live conversations about services, pricing, and potential new appointments. Qualified agent: An agent that is able to assist a caller with his or her inquiry. The qualified employee may at times need to call back in order to provide an answer or solution. Unqualified agent: An agent that is not able to assist the caller with his or her inquiry. This is not the same as an answering service that handles a business opportunity and promises a call back from a dispatcher, technician, or employee of the business. REMINDER: The rules for the Inbound category DO NOT apply to this category. This category has its own set of rules regarding connected and not connected calls. Here are the options: Live conversation about service / pricing / potential new appointment Select this option if the call is handled by an answering service or qualified agent and: Represents a potential new appointment opportunity Caller discusses a particular service they are interested in Caller asks about price or availability of a service Caller asks about specific details of a service Caller asks for a price quote Agent needs to check to see if that service is offered Live conversation about an existing appointment Select this option if the call is handled by an answering service or qualified agent and: Caller discusses an upcoming existing appointment Caller discusses an appointment that is currently taking place Caller discusses rescheduling an existing appointment Caller cancels an existing appointment Live conversation not about an appointment Select this option if the call is handled by an answering service or qualified agent but: The call is not about a new or existing appointment The call is a general discussion that does not represent a business opportunity Caller is a current employee or technician Caller is only calling about business hours Caller is calling about employment opportunities Caller is only asking for directions Caller is only trying to sell something Caller never connected to a live, qualified agent Select this option if: The call never connected to the intended person, a qualified agent, or an answering service agent that was able to handle the call Remember: Answering services that handle a business opportunity by receiving the caller’s information and service needs, and promise a call back from a dispatcher, technician, or business employee to book an appointment, are considered connected calls and should be reviewed accordingly. The call reached voicemail The caller was left on hold The call connection was lost The caller had the wrong number The audio is unclear because it is a garbled or distorted recording The call is only a few seconds in length and contains no clear audio or conversation The call consisted of music from start to finish The call consisted of perpetual ringing from start to finish The caller hung up during an after hours greeting or other business recording The caller hung up during the bridge greeting A bridge greeting is a recorded message that answers the phone and offers a menu such as \"For sales press 1, for service press 2, for parts press 3\" The caller was offered the option of leaving a message with an unqualified employee but declined to leave a live message If you have any questions, please visit our FAQ REVIEW CALLS",
+    "options": [
+      {
+        "id": "1012989",
+        "label": "Live conversation about service / pricing / potential new appointment",
+        "criteria": "Live conversation about service / pricing / potential new appointment",
+        "value": "1012989"
+      },
+      {
+        "id": "1012990",
+        "label": "Live conversation about an existing appointment",
+        "criteria": "Live conversation about an existing appointment",
+        "value": "1012990"
+      },
+      {
+        "id": "1012991",
+        "label": "Live conversation not about an appointment",
+        "criteria": "Live conversation not about an appointment",
+        "value": "1012991"
+      },
+      {
+        "id": "1012992",
+        "label": "Call not handled by answering service or qualified agent",
+        "criteria": "Call not handled by answering service or qualified agent",
+        "value": "1012992"
+      }
+    ]
+  },
+  {
+    "category_id": "3",
+    "category_name": "Inbound",
+    "rules": "Category Instructions: Inbound The purpose of the category Inbound is to determine whether or not the call was handled by a live, qualified employee or interactive system. This category is the baseline for most of the other categories in Humanatic. To maintain high performance in downstream categories, you should first understand the fundamentals of what is considered a connected, handled call.\n\nHelpful information:Not every conversation between two people will be considered handled. Specific criteria must be met for it to be considered handled by a qualified employee or interactive system. Qualified employee: An employee that is able to assist a caller with his or her inquiry. The qualified employee may at times need to call",
+    "options": [
+      {
+        "id": "987654",
+        "label": "Handled by a qualified employee or interactive system",
+        "criteria": "Handled by a qualified employee or interactive system",
+        "value": "987654"
+      },
+      {
+        "id": "127599",
+        "label": "Not handled: call ended while on hold",
+        "criteria": "Not handled: call ended while on hold",
+        "value": "127599"
+      },
+      {
+        "id": "127600",
+        "label": "Not handled: nobody there, hung up during bridge, wrong number, spam",
+        "criteria": "Not handled: nobody there, hung up during bridge, wrong number, spam",
+        "value": "127600"
+      },
+      {
+        "id": "127601",
+        "label": "Not handled: other",
+        "criteria": "Not handled: other",
+        "value": "127601"
+      },
+      {
+        "id": "127603",
+        "label": "Not handled: left message on voicemail",
+        "criteria": "Not handled: left message on voicemail",
+        "value": "127603"
+      },
+      {
+        "id": "127604",
+        "label": "Not handled: reached voicemail and did not leave message",
+        "criteria": "Not handled: reached voicemail and did not leave message",
+        "value": "127604"
+      },
+      {
+        "id": "127605",
+        "label": "Not handled: live message left for another employee",
+        "criteria": "Not handled: live message left for another employee",
+        "value": "127605"
+      },
+      {
+        "id": "127606",
+        "label": "Not handled: live conversation but no live message left",
+        "criteria": "Not handled: live conversation but no live message left",
+        "value": "127606"
       }
     ]
   }

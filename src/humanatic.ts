@@ -19,7 +19,7 @@ export const DEFAULT_SELECTORS: DiscoveredSelectors = {
   loginForm: "#login-form, form[action*='login'], .login-form",
   emailInput: "input[name='email'], input[name='username'], input[type='email'], input[name='login']",
   passwordInput: "input[name='password'], input[type='password']",
-  loginButton: "button[type='submit'], .btn-login, #loginBtn, input[type='submit']",
+  loginButton: "button[type='submit'], input[type='submit'], .btn-login, #loginBtn",
 };
 
 export type HumanaticSelectors = DiscoveredSelectors;
@@ -33,9 +33,12 @@ export const inspectPortal = async (
   page: Page,
 ): Promise<{ categoryId: string; callId?: string; categoryName?: string }> => {
   const sel = selectors();
-  await page.waitForSelector(sel.optionInputs, { timeout: 30000 }).catch(async () => {
-    await page.waitForSelector(sel.callContainer, { timeout: 15000 });
-  });
+  const hasHumfun = (await page.locator(".humfun-options-list-item").count().catch(() => 0)) >= 2;
+  if (!hasHumfun) {
+    await page.waitForSelector(sel.optionInputs, { timeout: 30000 }).catch(async () => {
+      await page.waitForSelector(sel.callContainer, { timeout: 15000 });
+    });
+  }
 
   const metadata = await page.evaluate((s) => {
     const container =
@@ -52,23 +55,39 @@ export const inspectPortal = async (
       null;
 
     const firstOption = container.querySelector<HTMLInputElement>(s.optionInputs);
+    const humfunHco = (
+      document.querySelector(".humfun-options-list-item-hco")?.textContent || ""
+    ).trim();
+    // Never use radio/input name like takeABreak as category id
+    const optName = (firstOption?.getAttribute("name") || "").trim();
+    const safeOptName =
+      optName && !/break|take\s*a\s*break|remember|csrf/i.test(optName) ? optName : null;
+
     const categoryId =
       hcat ||
       container.getAttribute("data-category-id") ||
       document.querySelector("[data-category-id]")?.getAttribute("data-category-id") ||
-      firstOption?.getAttribute("name") ||
+      safeOptName ||
+      (humfunHco ? "humfun-live" : null) ||
       "unknown-category";
 
     const callId =
       container.getAttribute("data-call-id") ||
       document.querySelector("[data-call-id]")?.getAttribute("data-call-id") ||
+      (document.querySelector('input[name="cid"]') as HTMLInputElement | null)?.value ||
       undefined;
 
-    const categoryName =
+    const rawName =
       container.querySelector(s.categoryTitle)?.textContent?.trim() ||
       document.querySelector(s.categoryTitle)?.textContent?.trim() ||
+      document.querySelector(".humfun-options-header-title")?.textContent?.trim() ||
       document.body?.innerText?.match(/Category Instructions:\s*([^\n]+)/i)?.[1]?.trim() ||
       undefined;
+    // Ignore UI chrome mistaken as category title (Take a Break button, etc.)
+    const categoryName =
+      rawName && !/take\s*a\s*break|break\s*room|continue\s*reviewing/i.test(rawName)
+        ? rawName
+        : undefined;
 
     return { categoryId, callId: callId || undefined, categoryName };
   }, sel);
@@ -82,8 +101,15 @@ export const inspectPortal = async (
 
 /**
  * Read review options from the live DOM with stable ids (id || name:value || value).
+ * Supports classic radios and Humfun /x19/review.cfm card options.
  */
 export const readLiveOptions = async (page: Page): Promise<ReviewOption[]> => {
+  const humfunCount = await page.locator(".humfun-options-list-item").count().catch(() => 0);
+  if (humfunCount >= 2) {
+    const { readHumfunOptions } = await import("./humfunReview");
+    return readHumfunOptions(page);
+  }
+
   const sel = selectors();
   const options = await page.evaluate((s) => {
     const inputs = Array.from(document.querySelectorAll<HTMLInputElement>(s.optionInputs)).filter(
@@ -91,6 +117,9 @@ export const readLiveOptions = async (page: Page): Promise<ReviewOption[]> => {
         const name = (input.name || "").toLowerCase();
         const id = (input.id || "").toLowerCase();
         if (input.type === "checkbox" && (name.includes("remember") || id.includes("remember"))) {
+          return false;
+        }
+        if (input.type === "checkbox" && (name.includes("break") || id.includes("break"))) {
           return false;
         }
         return input.type === "radio" || input.type === "checkbox";
@@ -207,50 +236,151 @@ export const extractRulesFromInfoIcon = async (page: Page): Promise<CategoryRule
 };
 
 /**
- * Capture the call transcript from the review page.
- * Falls back to Whisper transcription of <audio> when no text transcript exists.
+ * Phrases that only ever appear in Humanatic's category instructions / practice
+ * scaffolding — never inside a real caller conversation. If scraped page text
+ * contains any of these we are looking at the instructions page, not a call.
  */
-export const captureTranscript = async (page: Page): Promise<string> => {
-  const sel = selectors();
-  const transcriptHandle = await page.$(sel.transcriptElement);
-  if (transcriptHandle) {
-    const transcript = await transcriptHandle.textContent();
-    const trimmed = transcript?.trim() || "";
-    if (trimmed.length > 20) return trimmed;
+const INSTRUCTION_MARKERS: RegExp[] = [
+  /category\s+instructions/i,
+  /practice\s+questions/i,
+  /here\s+are\s+the\s+options/i,
+  /submit\s+review/i,
+  /selections?\s+will\s+be\s+available/i,
+  /please\s+complete\s+all\s+practice/i,
+  /was\s+the\s+call\s+handled\s+by\s+a\s+qualified\s+employee/i,
+  /^\s*handled\s+by\s+a\s+qualified\s+employee/i,
+  /not\s+handled:\s*(other|voicemail|nobody)/i,
+];
+
+/**
+ * True when scraped text is Humanatic chrome (instructions, option labels,
+ * practice blocks) rather than an actual call transcript.
+ *
+ * This guard exists because the old loose DOM scrape happily returned the
+ * instructions wall as a "transcript", which the LLM then agreed with at
+ * confidence 1.0. See data/reviews.json for the historical damage.
+ */
+export const looksLikeInstructions = (text: string, optionLabels: string[] = []): boolean => {
+  const t = (text || "").trim();
+  if (!t) return true;
+
+  if (INSTRUCTION_MARKERS.some((re) => re.test(t))) return true;
+
+  // If most of the option labels appear verbatim, this is the options list.
+  const labels = optionLabels.map((l) => l.trim().toLowerCase()).filter((l) => l.length > 12);
+  if (labels.length >= 2) {
+    const lower = t.toLowerCase();
+    const hits = labels.filter((l) => lower.includes(l)).length;
+    if (hits >= Math.min(2, labels.length)) return true;
   }
 
-  const textContent = await page.evaluate(() => {
-    const elements = document.querySelectorAll(
-      "[class*='transcript'], [id*='transcript'], [class*='call-'], .conversation, [class*='dialog'], pre, textarea",
-    );
-    for (let i = 0; i < elements.length; i++) {
-      const text = elements[i].textContent?.trim() || (elements[i] as HTMLTextAreaElement).value;
-      if (text && text.length > 50) return text;
-    }
-    return null;
-  });
+  return false;
+};
 
-  if (textContent) return textContent;
+/** Resolve the call audio URL from <audio>, <source>, or a data attribute. */
+const findAudioUrl = async (page: Page): Promise<string> => {
+  const sel = selectors();
+  return page
+    .evaluate((audioSel) => {
+      const audio = document.querySelector(audioSel) as HTMLAudioElement | null;
+      if (audio?.currentSrc || audio?.src) return audio.currentSrc || audio.src;
+      const source = document.querySelector("audio source") as HTMLSourceElement | null;
+      if (source?.src) return source.src;
+      const anyAudio = document.querySelector("audio") as HTMLAudioElement | null;
+      if (anyAudio?.currentSrc || anyAudio?.src) return anyAudio.currentSrc || anyAudio.src;
+      const dataAttr = document.querySelector("[data-audio-source]") as HTMLElement | null;
+      return dataAttr?.getAttribute("data-audio-source") || "";
+    }, sel.audioSource)
+    .catch(() => "");
+};
 
-  const audioUrl = await page.evaluate((audioSel) => {
-    const audio = document.querySelector(audioSel) as HTMLAudioElement | null;
-    if (audio?.currentSrc || audio?.src) return audio.currentSrc || audio.src;
-    const source = document.querySelector("audio source") as HTMLSourceElement | null;
-    return source?.src || "";
-  }, sel.audioSource);
+/**
+ * Capture the call transcript from the review page.
+ *
+ * Order matters: audio → Whisper is the ONLY reliable source of the actual
+ * conversation. DOM text is used solely when a dedicated transcript container
+ * exists AND it survives the instructions guard.
+ */
+export const captureTranscript = async (
+  page: Page,
+  optionLabels: string[] = [],
+): Promise<string> => {
+  const sel = selectors();
 
+  // 1) Real audio → Whisper. This is the source of truth.
+  const audioUrl = await findAudioUrl(page);
   if (audioUrl) {
     const { transcribeAudioUrl } = await import("./whisper");
-    return transcribeAudioUrl(audioUrl);
+    const cookieHeader = await page
+      .context()
+      .cookies(audioUrl)
+      .then((cookies) => cookies.map((c) => `${c.name}=${c.value}`).join("; "))
+      .catch(() => "");
+    const spoken = (await transcribeAudioUrl(audioUrl, cookieHeader)).trim();
+    if (spoken && spoken !== "(no speech detected)") {
+      if (looksLikeInstructions(spoken, optionLabels)) {
+        throw new Error("Whisper output matched instructions text — refusing to use as transcript.");
+      }
+      return spoken;
+    }
+    // Genuinely silent call — that IS the signal (dead air / no answer).
+    console.warn("[transcript] Whisper returned no speech — treating as silent call");
+    return "(no speech detected)";
   }
 
-  throw new Error("Transcript element not found and no audio source available.");
+  // 2) Dedicated transcript container only — never a broad wildcard class sweep.
+  const domText = await page
+    .evaluate((transcriptSel) => {
+      const nodes = Array.from(document.querySelectorAll(transcriptSel));
+      for (const node of nodes) {
+        const text =
+          (node as HTMLTextAreaElement).value?.trim() || node.textContent?.trim() || "";
+        if (text.length > 40) return text;
+      }
+      return "";
+    }, sel.transcriptElement)
+    .catch(() => "");
+
+  if (domText && !looksLikeInstructions(domText, optionLabels)) {
+    return domText;
+  }
+
+  if (domText) {
+    console.warn(
+      `[transcript] Rejected ${domText.length} chars of instructions-like text (no audio present)`,
+    );
+  }
+
+  throw new Error(
+    "No call audio and no valid transcript on page — refusing to decide on instructions text.",
+  );
 };
 
 /**
  * Select a review radio/checkbox by stable id / value / label binding (no submit).
  */
 export const selectReviewChoice = async (page: Page, selectedOptionId: string): Promise<void> => {
+  const humfunCount = await page.locator(".humfun-options-list-item").count().catch(() => 0);
+  if (humfunCount >= 2) {
+    // Selection without submit — click the card only
+    const ok = await page.evaluate((id) => {
+      const items = Array.from(document.querySelectorAll(".humfun-options-list-item"));
+      const item = items.find((el) => {
+        const hco = (el.querySelector(".humfun-options-list-item-hco")?.textContent || "").trim();
+        return hco === id;
+      }) as HTMLElement | undefined;
+      if (!item) return false;
+      item.scrollIntoView({ block: "center" });
+      item.click();
+      const send = document.querySelector("#sendThis") as HTMLInputElement | null;
+      if (send) send.value = id;
+      return true;
+    }, selectedOptionId);
+    if (!ok) throw new Error(`Unable to find Humfun option ${selectedOptionId}`);
+    await page.waitForTimeout(200);
+    return;
+  }
+
   const sel = selectors();
 
   const clicked = await page.evaluate(
@@ -292,6 +422,19 @@ export const selectReviewChoice = async (page: Page, selectedOptionId: string): 
  * Select then submit the review choice (live audits only).
  */
 export const submitReviewChoice = async (page: Page, selectedOptionId: string): Promise<void> => {
+  const humfunCount = await page.locator(".humfun-options-list-item").count().catch(() => 0);
+  if (humfunCount >= 2) {
+    const { selectAndSubmitHumfun, optionsStillLocked } = await import("./humfunReview");
+    // Only block when lock overlay is truly visible (tip text can linger after unlock)
+    if (await optionsStillLocked(page)) {
+      throw new Error("Options still locked — finish listening before submit");
+    }
+    const delayMs = 800 + Math.floor(Math.random() * 1200);
+    await page.waitForTimeout(delayMs);
+    await selectAndSubmitHumfun(page, selectedOptionId);
+    return;
+  }
+
   const sel = selectors();
   await selectReviewChoice(page, selectedOptionId);
 

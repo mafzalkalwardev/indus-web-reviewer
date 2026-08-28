@@ -17,6 +17,12 @@ export type GrokDecision = {
   selected_option_id: string;
   reasoning: string;
   confidence: number;
+  /**
+   * Where the decision came from. Heuristic decisions are keyword guesses made
+   * while the LLM is rate-limited and must NOT be treated as equivalent to a
+   * model decision — see config.heuristicSubmit.
+   */
+  source?: "llm" | "heuristic";
 };
 
 export type ReviewLogEntry = {
@@ -33,7 +39,9 @@ export type ReviewLogEntry = {
     | "practice_selected"
     | "skipped_low_confidence"
     | "skipped_error"
-    | "skipped_no_options";
+    | "skipped_no_options"
+    | "skipped_no_transcript"
+    | "skipped_heuristic_blocked";
 };
 
 export type DiscoveredSelectors = {
