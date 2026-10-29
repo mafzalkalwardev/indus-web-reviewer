@@ -1,29 +1,70 @@
-<p align="center">
-  <img src="brand/indus-web-reviewer-logo.png" alt="Indus Web Reviewer" width="240">
-</p>
+<div align="center">
 
 # Indus Web Reviewer
 
-Local Electron dashboard and wait-mode worker for Humanatic call reviews. It uses your local Chrome profile via Playwright/CDP, with Grok and Whisper support for assisted review decisions.
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=28&duration=2800&pause=700&color=2563EB&center=true&vCenter=true&width=900&lines=Humanatic+Call+Review+Automation;Local+Control+Dashboard;QA+Workflow+Acceleration;Built+for+review+ops" alt="Typing SVG" />
 
-> This is a local tool. Keep API keys and Chrome-profile configuration in `.env`; never commit that file.
-
-## Dashboard
-
-<p align="center">
-  <img src="brand/dashboard-overview.png" alt="Indus Web Reviewer dashboard showing worker controls, traffic, daily report, and recent reviews" width="100%">
+<p>
+  <img src="https://komarev.com/ghpvc/?username=mafzalkalwardev&label=Project%20Views&color=2563eb&style=for-the-badge" alt="Project views" />
+  <img src="https://img.shields.io/github/stars/mafzalkalwardev/indus-web-reviewer?style=for-the-badge&color=22c55e" alt="GitHub stars" />
+  <img src="https://img.shields.io/github/forks/mafzalkalwardev/indus-web-reviewer?style=for-the-badge&color=f59e0b" alt="GitHub forks" />
+  <img src="https://img.shields.io/github/license/mafzalkalwardev/indus-web-reviewer?style=for-the-badge&color=64748b" alt="License" />
 </p>
 
-The dashboard brings worker controls, review activity, category queues, daily reporting, and site traffic into one place.
+<p>
+  <img src="https://skillicons.dev/icons?i=ts,react,nodejs" alt="Skill icons" />
+</p>
 
-## Highlights
+<p>
+  <strong>Indus Web Reviewer — Humanatic call review automation with a local control dashboard for QA workflows.</strong>
+</p>
 
-- Electron desktop application with a browser dashboard option
-- Wait-mode worker that attaches to or launches your configured Chrome profile
-- Category selection, worker controls, queue rotation, and realtime status
-- Practice mode for safe testing before live submission
-- Audio-first transcript handling with optional Grok and Whisper assistance
-- Tampermonkey helper scripts installed automatically when the worker starts
+</div>
+
+---
+
+## Trophy Cards
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=mafzalkalwardev&theme=algolia&no-frame=true&no-bg=true&margin-w=12&margin-h=12&column=4" alt="GitHub trophy cards" />
+</div>
+
+---
+
+## Stats Cards
+
+<div align="center">
+  <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api?username=mafzalkalwardev&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" alt="GitHub stats" />
+  <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=mafzalkalwardev&layout=compact&theme=tokyonight&hide_border=true" alt="Top languages" />
+</div>
+
+---
+
+## Activity Graph
+
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=mafzalkalwardev&theme=react-dark&hide_border=true&area=true" alt="GitHub activity graph" />
+</div>
+
+---
+
+## Contribution Snake
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mafzalkalwardev/google-voice-dispatch-agent/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mafzalkalwardev/google-voice-dispatch-agent/output/github-contribution-grid-snake.svg">
+    <img alt="Contribution snake" src="https://raw.githubusercontent.com/mafzalkalwardev/google-voice-dispatch-agent/output/github-contribution-grid-snake.svg">
+  </picture>
+</div>
+
+---
+
+## SEO Keywords
+
+`call review` `Humanatic` `QA automation` `Indus`
+
+---
 
 ## Requirements
 
